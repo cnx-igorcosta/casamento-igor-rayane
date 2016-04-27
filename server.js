@@ -6,8 +6,8 @@ var connection = require('./app/config/database.js');
 var routes = require('./app/routes/route');
 
 //conexão com banco
-var uri = process.env.MONGOLAB_URI;
-console.log('process.env.MONGOLAB_URI: '+uri);
+var uri = process.env.MONGODB_URI;
+console.log('process.env.MONGODB_URI: '+uri);
 connection.connect(uri);
 
 //STATIC SOURCES
