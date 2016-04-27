@@ -1,0 +1,17 @@
+{
+  "name": "casamento-app",
+  "version": "1.0.0",
+  "description": "app para RSVP e mensagens do site para o banco",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "igorgcosta",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.13",
+    "serve-favicon": "^2.3.0"
+  }
+}

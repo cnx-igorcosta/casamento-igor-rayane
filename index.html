@@ -4,23 +4,41 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html ng-app="casamentoApp">
 	<head>
 		<title>Casamento Igor & Rayane</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/slide.css" />
+		<link rel="stylesheet" href="assets/css/animate.css" />
+		<link rel="stylesheet" href="assets/css/comum.css" />
+		<link rel="stylesheet" href="assets/css/horizon-swiper.min.css" />
+    <link rel="stylesheet" href="assets/css/horizon-theme.min.css"/>
+    <link rel="stylesheet" href="assets/css/autocomplete.css"/>
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/eggplant/jquery-ui.css" type="text/css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
 	</head>
 	<body class="landing">
-
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/wow.min.js"></script>
+		<script src="assets/js/maps.js"></script>
+		<script>
+			if(!skel.vars.mobile){
+				new WOW().init();
+			}
+		</script>
 		<!-- Page Wrapper -->
-			<div id="page-wrapper" class="bansld">
-
+		<div id="page-wrapper" class="slide slide1">
+			<input type="hidden" id="nextSlide" value="">
+			<input type="hidden" id="nextContainer" value="">
 				<!-- Header -->
 					<header id="header" class="alt">
+						<!--<h1><a href="index.html">Igor & Rayane</a></h1>-->
 						<h1><a href="index.html">Igor & Rayane</a></h1>
 						<nav id="nav">
 							<ul>
@@ -28,11 +46,15 @@
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
-											<li><a href="elements.html">Elements</a></li>
-											<li><a href="#">Sign Up</a></li>
-											<li><a href="#">Log In</a></li>
+											<li><a href="#banner" class="scrolly">Início</a></li>
+											<li><a href="#nossaHistoria" class="scrolly">Nossa História</a></li>
+											<li><a href="#evento" class="scrolly">O Evento</a></li>
+											<li><a href="#confirmarPresenca" class="scrolly">Confirmar Presença</a></li>
+											<li><a href="#nossoLado" class="scrolly">Ao Nosso Lado</a></li>
+											<li><a href="#listaPresentes" class="scrolly">Lista de Presentes</a></li>
+											<li><a href="#mural" class="scrolly">Mural de Mensagens</a></li>
+											<li><a href="#albuns" class="scrolly">Álbuns</a></li>
+											<li><a href="#contato" class="scrolly">Contato</a></li>
 										</ul>
 									</div>
 								</li>
@@ -41,15 +63,10 @@
 					</header>
 
 				<!-- Banner -->
-					<section id="banner" class="slide">
+					<section id="banner">
 						<div class="inner">
-							<h2>Igor & Rayane</h2>
-							<!--<p>Another fine responsive<br />
-							site template freebie<br />
-							crafted by <a href="http://html5up.net">HTML5 UP</a>.</p>
-							<ul class="actions">
-								<li><a href="#" class="button special">Activate</a></li>
-							</ul>-->
+							<h2 id="titulo">Igor & Rayane</h2>
+							<h3>25 de junho de 2017</h3>
 						</div>
 						<a href="#one" class="more scrolly">Saber mais</a>
 					</section>
@@ -58,46 +75,448 @@
 					<section id="one" class="wrapper style1 special">
 						<div class="inner">
 							<header class="major">
-								<h2>Arcu aliquet vel lobortis ata nisl<br />
-								eget augue amet aliquet nisl cep donec</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+								<h2>Igor e Rayane finalmente vão Casar!</h2>
+								<p>Queridos familiares, amigos e amigas,<br />
+									Depois de quase dez anos de namoro, com muita alegria, aprendizado e a<br />
+									certeza de que queremos compartilhar o resto de nossas vidas juntos, vamos nos casar!<br />
+									É com imensa felicidade que compartilhamos com vocês este momento tão especial!<br />
+									Agradeçemos a Deus e a todos vocês que nos deram suporte para que possamos dar<br />
+									este importante passo em nossas vidas.<br />
+									Aguardamos a todos no dia 25 de junho!</p>
 							</header>
 							<ul class="icons major">
-								<li><span class="icon fa-diamond major style1"><span class="label">Lorem</span></span></li>
+								<!--<li><span class="icon fa-diamond major style1"><span class="label">Lorem</span></span></li>-->
+								<li><span class="icon fa-heart-o major style1"><span class="label">Ipsum</span></span></li>
 								<li><span class="icon fa-heart-o major style2"><span class="label">Ipsum</span></span></li>
-								<li><span class="icon fa-code major style3"><span class="label">Dolor</span></span></li>
+								<li><span class="icon fa-heart-o major style3	"><span class="label">Ipsum</span></span></li>
+								<!--<li><span class="icon fa-venus-mars major style3"><span class="label">Dolor</span></span></li>-->
 							</ul>
 						</div>
 					</section>
 
+					<section id="nossaHistoria" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Nossa História</h2>
+							</header>
+								<!-- MEDIA LARGE -->
+								<div class="media-large fiancee noivos">
+									<div class="row">
+										<div class="6u 12u$(large) noiva">
+											<img src="./images/noiva.jpg" class="noiva">
+										</div>
+										<div class="61u$ 12u$(large) noivo">
+											<img src="./images/noivo.jpg" class="noivo">
+										</div>
+									</div>
+									<div class="row">
+									<div class="5u 12u$(large) noiva">
+										<h2>A Noiva</h2>
+										<p>Rayane Simões</p>
+									</div>
+									<div class="2u 12u$(large) fiancee">
+										<h1 class="ecom">&</h1>
+									</div>
+									<div class="5u$ 12u$(large) noivo">
+										<h2>O Noivo</h2>
+										<p>Igor Pereira</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- MEDIA SMALL -->
+							<div class="media-small fiancee noivos">
+								<div>
+									<div class="noiva">
+										<img src="./images/noiva.jpg" class="noiva">
+									</div>
+									<div class="noivo">
+										<img src="./images/noivo.jpg" class="noivo">
+									</div>
+								</div>
+								<div class="nome-noivos">
+								<div class="noiva">
+									<h2>A Noiva</h2>
+									<p>Rayane Simões</p>
+								</div>
+								<div class="fiancee">
+									<h1 class="ecom">&</h1>
+								</div>
+								<div class="noivo">
+									<h2>O Noivo</h2>
+									<p>Igor Pereira</p>
+								</div>
+							</div>
+						</div>
+						</div>
+					</section>
+
 				<!-- Two -->
-					<section id="two" class="wrapper alt style2">
-						<section class="spotlight">
+					<section id="nossaHistoria" class="wrapper alt style3	">
+						<section class="spotlight wow slideInRight">
 							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-								<h2>Magna primis lobortis<br />
-								sed ullamcorper</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+								<h2>Começamos a namorar em 2007</h2>
+								<p>Nos conhecemos na igreja. Nosso primeiro beijo foi no mesmo local onde os pais da Rayane se beijaram pela primeira vez e repetindo as mesmas palavras "Posso te dar um beijo?"</p>
 							</div>
 						</section>
-						<section class="spotlight">
+						<section class="spotlight wow slideInLeft">
 							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
-								<h2>Tortor dolore feugiat<br />
-								elementum magna</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+								<h2>Sempre juntos</h2>
+								<p>Com o tempo amadurecemos juntos, nossas aparências mudaram, vivemos momentos de alegria e tristeza, sempre juntos e o amor que nasceu se fortalecia a cada dia.</p>
 							</div>
 						</section>
-						<section class="spotlight">
+						<section class="spotlight wow slideInRight">
 							<div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
-								<h2>Augue eleifend aliquet<br />
-								sed condimentum</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+								<h2>O desafio da distância</h2>
+								<p>Quando a Rayane entrou na faculdade, ela precisou morar em Macaé durante um tempo, o que causou um grande impacto no nosso relacionamento. No entanto, nosso amor se fortaleceu ainda mais e conseguimos enfrentar esse desafio juntos.</p>
+							</div>
+						</section>
+						<section class="spotlight wow slideInLeft">
+							<div class="image"><img src="images/pic5.jpg" alt="" /></div><div class="content">
+								<h2>A Proposta</h2>
+								<p>Em 2014, Igor decidiu fazer uma surpresa e pediu Rayane em casamento, no dia do seu aniversário. Entre flores e a promessa de amor eterno, ela disse Sim. E então começamos a planejar o grande dia.</p>
 							</div>
 						</section>
 					</section>
 
+					<!-- O EVENTO-->
+					<section id="evento" class="wrapper style6 special">
+						<div class="inner">
+							<header class="major">
+								<h2>O Evento</h2>
+								<ul class="features">
+									<li>
+										<h3 class="cerimonia-festa">Cerimônia e Festa</h3>
+										<p></p>
+										<p><span class="quando-local">Quando </span><span class="icon fa-arrow-right"></span> Domingo, 25 de junho de 2017, às 18:30h</p>
+										<p><span class="quando-local">Local </span><span class="icon fa-arrow-right"></span> Espaço Golden Palace - Estrada Intendente Magalhães 1064, Vila Valqueire</p>
+									</li>
+								</ul>
+							<div id="map" class="12u$" style="width: 100%; height:350px; position: relative; overflow: hidden; transform: translateZ(0px); padding: 0; margin-top: 10px;">
+	            	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOuXZNDEQIEFl1TUqoNMJKwyNlYwYYynQ&signed_in=true&libraries=places&callback=initMapDirection"></script>
+	            </div>
+
+								<form>
+									<div class="row uniform" style="padding-top:5%;">
+										<div class="8u 12u$(small)">
+											<input type="text" name="demo-name" id="origem_rota" value="" placeholder="Local de partida" />
+										</div>
+										<div class="4u 12u$(small)">
+											<ul class="actions fit">
+												<li>
+													<a href="#" id="tracarRota" name="tracarRota" onclick="javascript:function(){return false}" class="button special fit icon fa-map-marker">Traçar Rota</a></li>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</form>
+						</div>
+					</section>
+
+				<!-- CONFIRMAR PRESENÇA -->
+					<section id="confirmarPresenca" class="wrapper style2 special">
+						<div class="inner" ng-controller="confirmacaoCtrl">
+							<header class="major">
+								<h2>Confirmar Presença</h2>
+								<p>Sua presença é muito importante para nós!</p>
+							</header>
+							<div class="row uniform" style="padding-top:5%;">
+								<div class="8u 12u$(small)">
+									<!-- <input type="text" name="confirmacao-nome" id="confirmacao-nome"
+										placeholder="Nome" ng-model="nome"
+										auto-complete ui-items="nomes"/> -->
+
+										<autocomplete ng-model="nome" data="nomes" on-type="updateMovies"></autocomplete>
+								</div>
+								<div class="4u 12u$(small)">
+									<ul class="actions fit">
+										<li>
+											<a href="#" id="confirmacao-buscar" name="confirmacao-buscar"
+												class="button special fit" ng-click="buscarConvidado(nome, $event);">
+													<i ng-show="isLoading" class="fa fa-spinner fa-pulse"></i>
+													<i ng-show="!isLoading" class="fa fa-search"></i> Buscar
+											</a>
+										</li>
+									</ul>
+								</div>
+								<p ng-show="naoEncontrado" class="12u 12u$(small)">Não encontrado</p>
+								<div ng-show="mostrarTabela" class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Nome</th>
+												<th colspan="2"><span ng-show="respostaEnviada">Status</span></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="convidado in convidados">
+												<td>{{convidado.nome}}</td>
+												<!-- <td>{{status(convidado)}}</td> -->
+												<td style="text-align: right;" ng-show="!mostrarStatus(convidados[$index]);">
+													<a href="#" class=" button special small" ng-click="confirmarPresenca($event, convidados[$index], true);">Confirmar</a>
+													<a href="#" class=" button small" ng-click="confirmarPresenca($event, convidados[$index], false);">Não poderei ir</a>
+												</td>
+												<td style="text-align: left;" ng-show="mostrarStatus(convidados[$index]);">
+													Resposta enviada
+												</td>
+												<!-- <td>
+													<input type="radio" id="confirmado-{{$index}}" name="confirmacao-{{$index}}" ng-model="convidado.confirmado" ng-value="true">
+													<label for="confirmado-{{$index}}">Confirmar</label>
+													<a href="#" onclick="javascript:function(){return false}" class=" button special small icon fa-check">Confirmar</a></li>
+												</td>
+												<td>
+													<input type="radio" id="nao-confirmado-{{$index}}" name="confirmacao-{{$index}}" ng-model="convidado.confirmado" ng-value="false">
+													<label for="nao-confirmado-{{$index}}">Não poderei ir</label>
+													 <a href="#" onclick="javascript:function(){return false}" class=" button special small icon fa-check">Confirmar</a></li>
+												</td> -->
+											</tr>
+											<tfoot>
+												<tr>
+													<td colspan="3">
+														<div class="12u 12u$(small)">
+															<ul class="actions fit">
+																<li>
+																	<!-- <a href="#" class=" button special small icon fa-check" ng-click="salvar($event);">Salvar</a> -->
+																	<a href="#" class=" button small icon" ng-click="cancelar($event);">Cancelar</a>
+																</li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+											</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- AO NOSSO LADO -->
+				<section id="nossoLado" class="wrapper style1 special">
+					<div class="inner">
+						<header class="major">
+							<h2>Ao Nosso Lado</h2>
+							<!-- <div class="row uniform" style="padding-top:5%;">
+								<div class="4u 12u$(small)">
+									<a href="#" id="familia" class="horizon-link">Família</a>
+								</div>
+								<div class="4u 12u$(small)">
+									<a href="#" id="padrinhos" class="horizon-link active">Padrinhos</a>
+								</div>
+								<div class="4u$ 12u$(small)">
+									<a href="#" id="daminhas" class="horizon-link">Daminhas e Pajem</a>
+								</div>
+							</div> -->
+						</header>
+						<div class="12u 12u$(small)">
+							<a href="#" id="familia" class="horizon-link active">Família</a>
+						</div><br><br>
+						<div id="horizon-familia" class="horizon-swiper">
+							<div class="horizon-item">
+								<div class="horizon-left">
+									<img src="./images/nossolado/ronaldo.jpg">
+									<p>Ronaldo <br>(Em memória)</p>
+								</div>
+								<div class="horizon-right">
+									<img src="./images/nossolado/sandrabarros.jpg">
+									<p>Sandra Simões</p>
+								</div>
+							</div>
+							<div class="horizon-item">
+								<div class="horizon-left">
+									<img src="./images/nossolado/antonio.jpg">
+									<p>Antônio <br>(Em memória)</p>
+								</div>
+								<div class="horizon-right">
+									<img src="./images/nossolado/sandrapereira.jpg">
+									<p>Sandra Pereira</p>
+								</div>
+							</div>
+						</div>
+						<br><br>
+						<div>
+							<div class="12u 12u$(small)">
+								<a href="#" id="padrinhos" class="horizon-link active">Padrinhos</a>
+							</div>
+							<br><br>
+							<div id="horizon-padrinhos" class="horizon-swiper">
+								<div class="horizon-item">
+									<div class="horizon-left">
+										<img src="./images/nossolado/joaquim.jpg">
+										<p>Joaquim</p>
+									</div>
+									<div class="horizon-right">
+										<img src="./images/nossolado/rozane.jpg">
+										<p>Rozane</p>
+									</div>
+								</div>
+								<div class="horizon-item">
+									<div class="horizon-left">
+										<img src="./images/nossolado/roberto.jpg">
+										<p>Roberto</p>
+									</div>
+									<div class="horizon-right">
+										<img src="./images/nossolado/carolina.jpg">
+										<p>Carolina</p>
+									</div>
+								</div>
+							  <div class="horizon-item">
+									<div class="horizon-left">
+										<img src="./images/nossolado/nelson.jpg">
+										<p>Nelson</p>
+									</div>
+									<div class="horizon-right">
+										<img src="./images/nossolado/elisana.jpg">
+										<p>Elisana</p>
+									</div>
+								</div>
+								<div class="horizon-item">
+									<div class="horizon-left">
+										<img src="./images/nossolado/leonardo.jpg">
+										<p>Leonardo</p>
+									</div>
+									<div class="horizon-right">
+										<img src="./images/nossolado/ellen.jpg">
+										<p>Ellen</p>
+									</div>
+								</div>
+								<div class="horizon-item">
+									<div class="horizon-left">
+										<img src="./images/nossolado/ezequias.jpg">
+										<p>Ezequias</p>
+									</div>
+									<div class="horizon-right">
+										<img src="./images/nossolado/tania.jpg">
+										<p>Tânia</p>
+									</div>
+								</div>
+								<div class="horizon-item">
+									<div class="horizon-left">
+										<img src="./images/nossolado/rodrigo.jpg">
+										<p>Rodrigo</p>
+									</div>
+									<div class="horizon-right">
+										<img src="./images/nossolado/rebeca.jpg">
+										<p>Rebeca</p>
+									</div>
+								</div>
+							  <div class="horizon-item">
+									<div class="horizon-left">
+										<img src="./images/nossolado/daniel.jpg">
+										<p>Daniel</p>
+									</div>
+									<div class="horizon-right">
+										<img src="./images/nossolado/daiane.jpg">
+										<p>Daiane</p>
+									<div>
+								</div>
+								<div class="horizon-item">
+									<div class="horizon-left">
+										<img src="./images/nossolado/filippi.jpg">
+										<p>Filippi</p>
+									</div>
+									<div class="horizon-right">
+										<img src="./images/nossolado/brenda.jpg">
+										<p>Brenda</p>
+									</div>
+								</div>
+							  <div class="horizon-item">
+									<div class="horizon-left">
+										<img src="./images/nossolado/marcio.jpg">
+										<p>Márcio</p>
+									</div>
+									<div class="horizon-right">
+										<img src="./images/nossolado/eunice.jpg">
+										<p>Eunice</p>
+									</div>
+									<div class="horizon-item">
+										<div class="horizon-left">
+											<img src="./images/nossolado/itamar.jpg">
+											<p>Itamar</p>
+										</div>
+										<div class="horizon-right">
+											<img src="./images/nossolado/nathy.jpg">
+											<p>Nathália</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br><br>
+					<div class="12u$ 12u$(small)">
+						<a href="#" id="daminhas" class="horizon-link active">Daminhas e Pajem</a>
+					</div>
+					<br><br>
+					<div id="horizon-daminhas">
+						<div class="horizon-item">
+							<div class="horizon-left horizon-right">
+								<img src="./images/nossolado/nicole.jpg">
+								<p>Nicole</p>
+							</div>
+						</div>
+						<div class="horizon-item">
+							<div class="horizon-left horizon-right">
+								<img src="./images/nossolado/andre.jpg">
+								<p>Marcos André</p>
+							</div>
+						</div>
+						<div class="horizon-item">
+							<div class="horizon-left horizon-right">
+								<img src="./images/nossolado/juliana.jpg">
+								<p>Juliana</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</section>
+
+				<!-- LISTA DE PRESENTES -->
+					<section id="listaPresentes" class="wrapper style3 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Lista de Presentes</h2>
+								<p>Agradeçemos ao carinho e lembramos que nosso maior presente<br> será a presença de vocês em nosso casamento!</p>
+							</header>
+							<ul class="features">
+								<li id="cota-viagem" class="icon fa-plane">
+									<h3>Cota de Viagem</h3>
+									<p>Torne nossa Lua de Mel ainda mais espetacular!</p>
+								</li>
+								<li id="para-lar" class="icon fa-gift">
+									<h3>Para o Lar</h3>
+									<p>Presentes para nosso lar ficar ainda mais aconchegante!</p>
+								</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- MURAL -->
+					<section id="mural" class="wrapper style6 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Mural de Mensagens</h2>
+								<p>Em Construção...</p>
+							</header>
+						</div>
+						<div>
+							<h5 class="4u 12u$(small)">Fulano</h5>
+							<p  class="8u 12u$(small)">Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui.</p>
+						</div>
+					</section>
+
+					<!-- ALBUNS -->
+					<section id="albuns" class="wrapper style2 special">
+						<div class="inner">
+							<header class="major">
+								<h2>Álbuns</h2>
+								<p>Em Construção...</p>
+							</header>
+					</section>
+
+
 				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
+					<!-- <section id="three" class="wrapper style3 special">
 						<div class="inner">
 							<header class="major">
 								<h2>Accumsan mus tortor nunc aliquet</h2>
@@ -131,86 +550,49 @@
 								</li>
 							</ul>
 						</div>
-					</section>
-
-					<section id="four" class="wrapper style6 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Local da Cerimônia e Festa</h2>
-								<!--<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend</p><br />-->
-							<div id="map" class="col-sm-12 col-md-12 col-lg-12 mapa" style="width: 100%; height:350px; position: relative; overflow: hidden; transform: translateZ(0px); padding: 0; margin-top: 10px;">
-	            	<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initMapDirection" async defer></script>
-	            </div>
-							<br>
-								<form>
-									<div class="row uniform">
-										<div class="8u 12u$(xsmall)">
-											<input type="text" name="demo-name" id="origem_rota" value="" placeholder="Local de partida" />
-										</div>
-										<ul class="actions">
-											<li><a href="#" id="tracarRota" name="tracarRota" onclick="javascript:function(){return false}" class="button special icon fa-search">Traçar Rota</a></li>
-										</ul>
-									</div>
-								</form>
-
-							<!--<div class="row">
-		            <div class="col-sm-12 col-md-12 col-lg-12">
-		                 <div class="texto">
-		                     <h2>COMO CHEGAR</h2>
-		                     <div class="row" style="padding: 0;">
-		                         <div class="col-xs-12 col-sm-8 col-md-10 col-lg-10 agendamento-col-8">
-		                             <input id="origem_rota" type="text" class="form-control input-lg" placeholder="" aria-describedby="basic-addon2">
-		                         </div>
-		                         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 agendamento-col-4">
-		                             <button type="button" id="tracarRota" class="btn btn-primary btn-lg btn-block" style="text-align: center;">Traçar Rota</button>
-		                         </div>
-		                     </div>
-		                 </div>
-		             </div>
-	         		</div>-->
-						</div>
-					</section>
+					</section> -->
 
 				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
+					<section id="contato" class="wrapper style4 special">
 						<div class="inner">
 							<header>
-								<h2>Arcue ut vel commodo</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+								<h2><span id="contagem"></span></h2>
 							</header>
-							<ul class="actions vertical">
-								<li><a href="#" class="button fit special">Activate</a></li>
-								<li><a href="#" class="button fit">Learn More</a></li>
-							</ul>
 						</div>
 					</section>
 
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+							<!-- <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li> -->
+							<li><a href="#" class="icon fa-facebook facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram instagram"><span class="label">Instagram</span></a></li>
+							<!-- <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+							<!-- <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li> -->
 						</ul>
 						<ul class="copyright">
-							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>Casamento Igor & Rayane</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</footer>
 
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+			<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.23/jquery-ui.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/horizon-swiper.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/comum.js"></script>
-			<script src="assets/js/maps.js"></script>
-			<!--<script src="assets/js/modernizr.custom.86080.js"></script>-->
+			<script src="assets/js/slide.js"></script>
+
+			<script src="assets/js/angular.min.js"></script>
+			<script src="assets/js/angular-resource.min.js"></script>
+			<script src="assets/js/autocomplete.js"></script>
+			<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script> -->
+			<script src="assets/js/casamentoApp.js"></script>
 	</body>
 </html>

@@ -1,0 +1,276 @@
+@font-face{
+  font-family:'Playball';
+  src:url('../fonts/Playball.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family:'Pathaway Gothic One';
+  src:url('../fonts/PathwayGothicOne-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+/*#nossaHistoria.wrapper{
+  padding: 2em 0 0 0;
+}*/
+#map{
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+#nossaHistoria img.noivo, #nossaHistoria img.noiva {
+  border-radius: 100%;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+#nossaHistoria img.noivo {
+  float: left;
+}
+#nossaHistoria img.noiva {
+  float: right;
+}
+
+.fiancee h2 {
+  font-family: 'Playball';
+  padding: 10px;
+  font-size: 2em;
+  color: #ccc6b8;
+  border-bottom: 1px solid #ccc6b8;
+  font-weight: normal;
+  letter-spacing: 0em;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 1281px){
+  .media-small{
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .media-large{
+    display: none;
+  }
+  .media-small{
+    display: inline-block;
+  }
+  .nome-noivos{
+    display: inline-flex;
+  }
+  #nossaHistoria img.noivo, #nossaHistoria img.noiva{
+    position: relative;
+    width: 110px;
+  }
+  #nossaHistoria img.noivo {
+    float: right;
+  }
+  #nossaHistoria img.noiva {
+    float: left;
+  }
+
+  .fiancee p{
+    font-size: 1.5em !important;
+  }
+  .fiancee h1{
+    font-size: 6em !important;
+  }
+  .fiancee h2 {
+    font-size: 1.5em !important;
+  }
+  .nome-noivos.noivo{
+    width: 50% !important;
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+  .media-large{
+    display: none;
+  }
+  .media-small{
+    display: inline-block;
+  }
+  .nome-noivos{
+    display: inline-flex;
+  }
+  #nossaHistoria img.noivo, #nossaHistoria img.noiva{
+    position: relative;
+    width: 140px;
+  }
+  #nossaHistoria img.noivo {
+    float: right;
+  }
+  #nossaHistoria img.noiva {
+    float: left;
+  }
+
+  .fiancee p{
+    font-size: 1.9em !important;
+  }
+  .fiancee h1{
+    font-size: 8em !important;
+  }
+  .fiancee h2 {
+    font-size: 1.9em !important;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 736px) {
+  #nossaHistoria img.noivo, #nossaHistoria img.noiva{
+    position: relative;
+    width: 240px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1280px) {
+  .media-large{
+    display: none;
+  }
+  .media-small{
+    display: inline-block;
+  }
+  .nome-noivos{
+    display: inline-flex;
+  }
+  #nossaHistoria img.noivo, #nossaHistoria img.noiva{
+    position: relative;
+  }
+  #nossaHistoria img.noivo {
+    float: right;
+  }
+  #nossaHistoria img.noiva {
+    float: left;
+  }
+}
+
+@media screen and (max-width: 278px) {
+  #nossaHistoria img.noivo, #nossaHistoria img.noiva{
+    position: relative;
+    width: 85px;
+  }
+}
+/*.noivos{
+  display: inline-block !important;
+}*/
+
+.fiancee h1 {
+  font-family: 'Helvetica';
+  font-size: 9em;
+  font-weight: normal;
+  letter-spacing: 0em;
+  text-transform: capitalize;
+}
+.fiancee p {
+  font-family: 'Pathaway Gothic One';
+  font-size: 3em;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.fiancee .noiva{
+  text-align: right;
+}
+.fiancee .noivo{
+  text-align: left;
+}
+
+/*div .noivos{
+  width: 80%
+}*/
+
+.cerimonia-festa{
+  font-family: 'Pathaway Gothic One';
+  font-size: 1.5em;
+  border: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+.quando-local{
+  font-family: 'Playball';
+  font-size: 1.5em;
+  /*color: #ccc6b8;*/
+}
+
+#evento .features li{
+  text-align: inherit;
+  width: 100%;
+}
+
+.horizon-swiper{
+  background: transparent !important;
+}
+#horizon-familia{
+  padding: 0px;
+}
+.horizon-item img{
+  border-radius: 100%;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+.horizon-item{
+  display: inline-flex !important;
+}
+.horizon-inner{
+  /*overflow: hidden !important;*/
+}
+.horizon-link{
+    text-transform: uppercase;
+    border-bottom: 0 !important;
+}
+.horizon-link:hover{
+    font-weight: bold;
+}
+.horizon-link.active{
+  font-weight: bold;
+  font-size: 1.2em
+}
+.horizon-left{
+  margin-left: auto;
+}
+.horizon-right{
+  margin-right: auto;
+}
+@media screen and (min-width: 380px) and (max-width: 980px){
+  .horizon-item img{
+    width: 150px;
+  }
+}
+@media screen and (max-width: 380px){
+  .horizon-item img{
+    width: 100px;
+  }
+}
+.features li{
+  cursor: pointer;
+}
+.features li:nth-child(2) {
+    background-color: rgba(0, 0, 0, 0.035);
+}
+.features li:hover, .features li:active {
+    background-color: rgba(0, 0, 0, 0.09);
+}
+.table-wrapper{
+  width: 100%;
+}
+.table-wrapper td{
+  vertical-align: middle !important;
+  text-align: left;
+  /*padding: 0.75em 0.75em 0px;*/
+  padding: 0.35em 0.35em !important;
+}
+/*@media screen and (min-width: 480px) and (max-width: 735px){
+  .horizon-item img{
+    /*position: relative;
+    width: 100px;
+  }
+}*/
+/*@media screen and (min-width: 199px) and (max-width: 498px){
+  .horizon-item img{
+    /*position: relative;
+    width: 50px;
+  }
+  .horizon-item p{
+    font-size: 0.8em;
+  }
+}*/

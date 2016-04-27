@@ -7,10 +7,10 @@ function initMap(address, callback){
 	directionsService = new google.maps.DirectionsService;
     directionsDisplay = new google.maps.DirectionsRenderer;
     var geocoder = new google.maps.Geocoder();
-    if(!address){
-    	address = 'Brasil';
-    }
-    geocoder.geocode( { 'address': address}, function(results, status) {
+    // if(!address){
+    // 	address = 'Brasil';
+    // }
+    geocoder.geocode( { 'address': 'ESTRADA INTENDENTE MAGALHÃES 1064, VILA VALQUEIRE - RIO DE JANEIRO - RJ'}, function(results, status) {
 
         if (status == google.maps.GeocoderStatus.OK) {
             var location = {
@@ -60,11 +60,12 @@ function initMapDirection(){
 function tracarRota(){
 	var origem = $('#origem_rota').val();
 	var destino = 'ESTRADA INTENDENTE MAGALHÃES 1064, VILA VALQUEIRE - RIO DE JANEIRO - RJ';
+
 	var directionRequest = {
             origin: origem,
             destination: destino,
             travelMode: google.maps.TravelMode.DRIVING,
-            //travelMode: google.maps.TravelMode.TRANSIT,
+            	//travelMode: google.maps.TravelMode.TRANSIT,
             transitOptions: {modes: [google.maps.TransitMode.SUBWAY, google.maps.TransitMode.TRAIN, google.maps.TransitMode.BUS]},
             optimizeWaypoints: true,
             provideRouteAlternatives: true
@@ -126,7 +127,8 @@ function createMarker(place, unidade) {
     });
 
 		infowindow.setOptions({
-				content: 'ESTRADA INTENDENTE MAGALHÃES 1064, VILA VALQUEIRE',
+				// content: 'ESTRADA INTENDENTE MAGALHÃES 1064, VILA VALQUEIRE',
+				content: 'Espaço Golden Palace',
 				position: place.geometry.location,
 		});
 		infowindow.open(map, marker);

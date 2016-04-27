@@ -1,55 +1,136 @@
 $(document).ready(function(){
-  //setTimeout(slide1,10000);
+  /*setTimeout(primeiraTroca,8000);*/
 
+  contagemRegressiva('06/25/2017 00:00 AM', 'contagem');
   //impede que ao clicar va para o topo da tela
   $('#tracarRota').click(function(e){
     e.preventDefault();
     return false;
   });
+  $('#cota-viagem').click(function(e){
+    e.preventDefault();
+    window.open('http://www.cvc.com.br/travel/lista/comprar-cota.aspx?Evento=633759');
+  });
+  $('#para-lar').click(function(e){
+    e.preventDefault();
+    window.open('http://www.pontofrio.com.br/Site/ListaGerenciadaLandingPage.aspx?idListaCompra=482124');
+  });
+
+  initializeSwipe();
 });
 
 
-function slide1(){
-  $('.bansld').fadeOut('slow',function(){
-    $('.bansld2').fadeIn('slow');
-  });
-  //$('.bansld').removeClass('bansld').addClass('bansld2');
-  //fadeOutClass ('slide', 'bansld2', 'bansld');
-  //fadeInClass ('slide', 'bansld2');
-  setTimeout(slide2,5000);
+$('a.facebook').click(function(e) {
+    e.preventDefault();
+    // window.open('https://www.facebook.com/igor.gabriel.792303');
+    window.open('https://www.facebook.com/raysbarros');
+});
+$('a.instagram').click(function(e) {
+    e.preventDefault();
+    // window.open('https://www.instagram.com/igrgabrl/');
+    window.open('https://www.instagram.com/euraysimoes/');
+});
+// $('a.horizon-link').click(function(e) {
+//   e.preventDefault();
+//   changeSwipe(event.target.id);
+// });
+
+function contagemRegressiva(dt, id){
+    var end = new Date(dt);
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+
+        // if(distance == 0){
+        //   clearInterval(timer);
+        //   document.getElementById(id).innerHTML = 'O grande dia é hoje!';
+        //   return;
+        // }
+
+        if (distance < 0) {
+            clearInterval(timer);
+            document.getElementById(id).innerHTML = 'O grande dia já aconteceu';
+            return;
+        }
+
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+
+        document.getElementById(id).innerHTML = 'Faltam ' + days + ' dias para o grande dia!';
+        // document.getElementById(id).innerHTML += hours + 'hrs ';
+        // document.getElementById(id).innerHTML += minutes + 'mins ';
+        // document.getElementById(id).innerHTML += seconds + 'secs';
+    }
+
+    timer = setInterval(showRemaining, 1000);
 }
 
-function slide2(){
-  $('.bansld2').fadeOut('slow',function(){
-    $('.bansld').fadeIn('slow');
+function initializeSwipe(){
+
+  var showItems = 2;
+  var oneDotTwoItems = true;
+  // screen < 736px
+  if (isSmallScreen()) {
+    showItems = 1;
+    oneDotTwoItems = false;
+  }
+  $('.horizon-swiper').horizonSwiper({
+    dots: true,
+    arrows: false,
+    animationSpeed: 700,
+    showItems: showItems,
+    oneDotTwoItems: oneDotTwoItems
   });
 
-  //$('.bansld2').removeClass('bansld2').addClass('bansld3');
-  //fadeOutClass ('slide', 'bansld3', 'bansld2');
-  //fadeInClass ('slide', 'bansld3');
-  //setTimeout(slide3,5000);
-  setTimeout(slide1,5000);
+  var itemsDaminhas = isSmallScreen() ? showItems : 3
+  $('#horizon-daminhas').horizonSwiper({
+    dots: true,
+    arrows: false,
+    animationSpeed: 700,
+    showItems: itemsDaminhas
+  });
+
+  $('#horizon-daminhas').addClass('horizon-swiper');
+  // $('.horizon-swiper').fadeOut();
+  // $('#horizon-padrinhos').fadeIn();
 }
 
-function slide3(){
-  $('.bansld3').removeClass('bansld3').addClass('bansld');
-  //fadeOutClass ('slide', 'bansld', 'bansld3');
-  //fadeInClass ('slide', 'bansld');
-  setTimeout(slide1,5000);
+function changeSwipe(id){
+
+  //quando esconde os outros swipes o plugin seta max-height = px
+  //o que faz com que eles não apareçam
+  var maxHeight = $('#horizon-padrinhos').children().css('max-height');
+  $('#horizon-familia').children().css('max-height', maxHeight);
+  $('#horizon-daminhas').children().css('max-height', maxHeight);
+
+  if(!isSmallScreen()){
+    $('.horizon-dots').hide();
+  }
+
+  if(!$('#'+id).hasClass('active')){
+    $('.horizon-link').removeClass('active');
+    $('#'+id).addClass('active');
+    $('.horizon-swiper').fadeOut();
+    setTimeout(function(){
+      $('#horizon-'+id).fadeIn();
+      if(id === 'padrinhos'){
+        $('.horizon-dots').show();
+      }
+    },400);
+  }
 }
 
-function fadeInClass (elClass, classAdd) {
-  $('.'+elClass).fadeIn('slow', function() {
-      $(this).addClass(classAdd);
-  });
-}
-function fadeOutClass (elClass, classAdd, classRem) {
-  $('.'+elClass).fadeOut("slow", function() {
-      $(this).removeClass(classRem);
-      fadeInClass(elClass, classAdd);
-      //$(this).addClass(classAdd);
-      //$('.'+elClass).fadeIn();
-  });
+function isSmallScreen(){
+  return $(window).width() < 736;
 }
 
 //8B2E5F
