@@ -15,7 +15,7 @@ var App = angular.module('casamentoApp', ['ngResource', 'autocomplete']);
 
 App.controller('confirmacaoCtrl', function($scope, $resource){
 
-  var Convidado = $resource('/api/convidados', null, {
+  var Convidado = $resource('http://casamentoigorerayane.heroku.com/api/convidados', null, {
     'update': { method:'PUT'},
     'get' : { method: 'GET', isArray:true}
   });
@@ -44,7 +44,7 @@ App.controller('confirmacaoCtrl', function($scope, $resource){
 
     var query = {nome : nome};
 
-    var Convi = $resource('/api/convidados/:nome', {nome:'@nome'},{
+    var Convi = $resource('http://casamentoigorerayane.heroku.com/api/convidados/:nome', {nome:'@nome'},{
       'get' : { method: 'GET', isArray:true}
     });
     Convi.get({nome:nome}, function(convs) {
