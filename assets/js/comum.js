@@ -1,12 +1,16 @@
 $(document).ready(function(){
   /*setTimeout(primeiraTroca,8000);*/
 
+  //contagem regressiva para data do evento
   contagemRegressiva('06/25/2017 00:00 AM', 'contagem');
+
   //impede que ao clicar va para o topo da tela
   $('#tracarRota').click(function(e){
     e.preventDefault();
     return false;
   });
+
+  //lista de casamento
   $('#cota-viagem').click(function(e){
     e.preventDefault();
     window.open('http://www.cvc.com.br/travel/lista/comprar-cota.aspx?Evento=633759');
@@ -15,7 +19,8 @@ $(document).ready(function(){
     e.preventDefault();
     window.open('http://www.pontofrio.com.br/Site/ListaGerenciadaLandingPage.aspx?idListaCompra=482124');
   });
-
+   $('.nano').nanoScroller();
+  //carrousel padrinhos
   initializeSwipe();
 });
 
@@ -85,7 +90,7 @@ function initializeSwipe(){
   }
   $('.horizon-swiper').horizonSwiper({
     dots: true,
-    arrows: false,
+    arrows: true,
     animationSpeed: 700,
     showItems: showItems,
     oneDotTwoItems: oneDotTwoItems

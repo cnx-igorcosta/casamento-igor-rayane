@@ -17,7 +17,7 @@
 		<link rel="stylesheet" href="assets/css/horizon-swiper.min.css" />
     <link rel="stylesheet" href="assets/css/horizon-theme.min.css"/>
     <link rel="stylesheet" href="assets/css/autocomplete.css"/>
-		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/eggplant/jquery-ui.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/nanoscroller.css"/>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
@@ -277,7 +277,7 @@
 															<ul class="actions fit">
 																<li>
 																	<!-- <a href="#" class=" button special small icon fa-check" ng-click="salvar($event);">Salvar</a> -->
-																	<a href="#" class=" button small icon" ng-click="cancelar($event);">Cancelar</a>
+																	<a href="#" class=" button small icon" ng-click="cancelar($event);">Limpar</a>
 																</li>
 															</ul>
 														</div>
@@ -478,7 +478,7 @@
 								<h2>Lista de Presentes</h2>
 								<p>Agradeçemos ao carinho e lembramos que nosso maior presente<br> será a presença de vocês em nosso casamento!</p>
 							</header>
-							<ul class="features">
+							<ul id="lista" class="features">
 								<li id="cota-viagem" class="icon fa-plane">
 									<h3>Cota de Viagem</h3>
 									<p>Torne nossa Lua de Mel ainda mais espetacular!</p>
@@ -498,10 +498,42 @@
 								<h2>Mural de Mensagens</h2>
 								<p>Em Construção...</p>
 							</header>
-						</div>
-						<div>
-							<h5 class="4u 12u$(small)">Fulano</h5>
-							<p  class="8u 12u$(small)">Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui.</p>
+							<div id="mensagens" class="nano" style="height:600px; overflow-y:none;">
+								<div class="nano-content">
+									<ul class="features">
+										<li class="icon fa-user">
+											<h3>Igor Gabriel</h3>
+										</li>
+										<li class="icon fa-comment">
+											<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+										</li>
+									</ul>
+									<ul class="features">
+										<li class="icon fa-user">
+											<h3>Rayane Barros</h3>
+										</li>
+										<li class="icon fa-comment">
+											<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+										</li>
+									</ul>
+									<ul class="features">
+										<li class="icon fa-user">
+											<h3>Sandra Pereira</h3>
+										</li>
+										<li class="icon fa-comment">
+											<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+										</li>
+									</ul>
+									<ul class="features">
+										<li class="icon fa-user">
+											<h3>Sandra Simões</h3>
+										</li>
+										<li class="icon fa-comment">
+											<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+										</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</section>
 
@@ -584,6 +616,7 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/horizon-swiper.js"></script>
 			<script src="assets/js/util.js"></script>
+			<script src="assets/js/jquery.nanoscroller.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/comum.js"></script>
@@ -594,5 +627,6 @@
 			<script src="assets/js/autocomplete.js"></script>
 			<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script> -->
 			<script src="assets/js/casamentoApp.js"></script>
+
 	</body>
 </html>
