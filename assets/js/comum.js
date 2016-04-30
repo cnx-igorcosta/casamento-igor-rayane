@@ -19,7 +19,9 @@ $(document).ready(function(){
     e.preventDefault();
     window.open('http://www.pontofrio.com.br/Site/ListaGerenciadaLandingPage.aspx?idListaCompra=482124');
   });
-  
+  if(!skel.vars.mobile){
+    $('.nano').nanoScroller();
+  }
   //carrousel padrinhos
   initializeSwipe();
 });
