@@ -19,7 +19,7 @@ $(document).ready(function(){
     e.preventDefault();
     window.open('http://www.pontofrio.com.br/Site/ListaGerenciadaLandingPage.aspx?idListaCompra=482124');
   });
-   $('.nano').nanoScroller();
+  
   //carrousel padrinhos
   initializeSwipe();
 });
@@ -28,12 +28,12 @@ $(document).ready(function(){
 $('a.facebook').click(function(e) {
     e.preventDefault();
     // window.open('https://www.facebook.com/igor.gabriel.792303');
-    window.open('https://www.facebook.com/raysbarros');
+    window.open('https://www.facebook.com/hashtag/casamentoigorerayane?ref=ts&fref=ts');
 });
 $('a.instagram').click(function(e) {
     e.preventDefault();
     // window.open('https://www.instagram.com/igrgabrl/');
-    window.open('https://www.instagram.com/euraysimoes/');
+    window.open('https://www.instagram.com/explore/tags/casamentoigorerayane/');
 });
 // $('a.horizon-link').click(function(e) {
 //   e.preventDefault();
