@@ -3239,7 +3239,7 @@
 					.wrapper.style6 button,
 					.wrapper.style6 .button {
 						box-shadow: inset 0 0 0 2px #dfdfdf;
-						color: #2E3842;
+						/*color: #2E3842;*/
 					}
 
 						.wrapper.style6 input[type="submit"]:hover,

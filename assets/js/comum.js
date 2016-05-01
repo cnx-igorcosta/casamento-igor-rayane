@@ -140,6 +140,18 @@ function isSmallScreen(){
   return $(window).width() < 736;
 }
 
+function showFormMural(e){
+  e.preventDefault();
+  $('#escrever-btn').fadeOut();
+  $('#escrever-mural').fadeIn();
+}
+function cancelarMensagem(e){
+  e.preventDefault();
+  $('#escrever-mural').fadeOut();
+  $('#escrever-btn').fadeIn();
+}
+
 //8B2E5F
 //BC2747
 //http://tympanus.net/codrops/2012/01/02/fullscreen-background-image-slideshow-with-css3/
+//http://fotorama.io/#birdwatcher__ac2c2fe6-30fe-4695-876b-ce185ed408cf
