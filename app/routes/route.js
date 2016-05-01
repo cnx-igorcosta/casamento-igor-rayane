@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser  = require('body-parser');
 var connection = require('../config/database.js');
 var Convidado = require('../models/convidado');
+var Mensagem = require('../models/mensagem');
 
 module.exports = function(app){
 
@@ -40,10 +41,6 @@ module.exports = function(app){
     //GET
     .get(function(req, res){
       var query = {};
-      // console.log(req.body.nome);
-      // if(req.body.nome){
-      //     query.nome = req.body.nome;
-      // }
       Convidado.find({}, function(err, convidados) {
         if (err)
           console.log(err);
@@ -98,4 +95,37 @@ module.exports = function(app){
         });
     });
 
+    router.route('/mensagens')
+    //GET
+    .get(function(req, res){
+      var query = {};
+      Mensagem.find({}).sort({createdAt: -1})
+        .exec(function(err, mensagens) {
+                if (err)
+                console.log(err);
+                else{
+                  var retorno = [];
+                  for(var i=0; i<mensagens.length; i++){
+                    var msg = {
+                      nome: mensagens[i].nome,
+                      texto: mensagens[i].texto
+                    }
+                    retorno.push(msg);
+                  }
+                  res.send(JSON.stringify(retorno));
+                }
+        });
+      })
+      //POST
+      .post(function(req, res){
+        var msg = new Mensagem({
+          nome: req.body.nome,
+          texto: req.body.texto
+        });
+        msg.save(function(err){
+          if (err)
+            res.send(err);
+          res.json({ message: 'Mensagem created!' });
+        });
+    });
 };

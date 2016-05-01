@@ -6,11 +6,10 @@ var connection = require('./app/config/database.js');
 var routes = require('./app/routes/route');
 
 //conexão com banco
-var uri = process.env.MONGODB_URI;
-console.log('process.env.MONGODB_URI: '+uri);
+var uri = process.env.MONGODB_URI || 'mongodb://localhost/casamento-app';
 connection.connect(uri);
 
-//STATIC SOURCES
+//STATIC SOURCES'mongodb://localhost/rpgmanager'
 app.use('/assets', express.static('assets'));
 app.use('/images', express.static('images'));
 var favicon = require('serve-favicon');

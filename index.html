@@ -277,7 +277,7 @@
 															<ul class="actions fit">
 																<li>
 																	<!-- <a href="#" class=" button special small icon fa-check" ng-click="salvar($event);">Salvar</a> -->
-																	<a href="#" class=" button small icon" ng-click="cancelar($event);">Limpar</a>
+																	<a href="#" class=" button small" ng-click="cancelar($event);">Limpar</a>
 																</li>
 															</ul>
 														</div>
@@ -493,43 +493,34 @@
 
 					<!-- MURAL -->
 					<section id="mural" class="wrapper style6 special">
-						<div class="inner">
+						<div class="inner" ng-controller="muralCtrl">
 							<header class="major">
 								<h2>Mural de Mensagens</h2>
-								<p>Em Construção...</p>
+								<p></p>
+								<p>
+									<a href="#" id="escrever-btn" class="button special small" onclick="showFormMural(event);">Escrever Mensagem</a>
+								</p>
+								<div id="escrever-mural" class="row uniform" style="display:none;">
+									<div class="4u 12u$(small)">
+										<input type="text" name="nome-mural" id="nome-mural" ng-model="mensagem.nome" placeholder="Nome" />
+									</div>
+									<div class="8u 12u$(small)">
+										<textarea name="mensagem-mural" id="mensagem-mural" ng-model="mensagem.texto" placeholder="Digite sua mensagem" rows="3"></textarea>
+									</div>
+									<div class="12u$ 12u$(small)">
+										<a href="#" id="enviar-mensagem" name="enviar-mensagem" ng-click="enviarMensagem($event, mensagem);" class="button special icon fa-commenting">Enviar Mensagem</a></li>
+										<a href="#" id="cancelar-mensagem" name="cancelar-mensagem" onclick="cancelarMensagem(event);" class="button small">Cancelar</a></li>
+									</div>
+								</div>
 							</header>
-							<div id="mensagens" class="nano" style="height:600px; overflow-y:none;">
+							<div id="mensagens" class="nano" style="height:500px; overflow-y:none;" ng-show="hasMensagem">
 								<div class="nano-content">
-									<ul class="features">
+									<ul class="features" ng-repeat="msg in mensagens">
 										<li class="icon fa-user">
-											<h3>Igor Gabriel</h3>
+											<h3>{{msg.nome}}</h3>
 										</li>
 										<li class="icon fa-comment">
-											<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-										</li>
-									</ul>
-									<ul class="features">
-										<li class="icon fa-user">
-											<h3>Rayane Barros</h3>
-										</li>
-										<li class="icon fa-comment">
-											<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-										</li>
-									</ul>
-									<ul class="features">
-										<li class="icon fa-user">
-											<h3>Sandra Pereira</h3>
-										</li>
-										<li class="icon fa-comment">
-											<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-										</li>
-									</ul>
-									<ul class="features">
-										<li class="icon fa-user">
-											<h3>Sandra Simões</h3>
-										</li>
-										<li class="icon fa-comment">
-											<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+											<p>{{msg.texto}}</p>
 										</li>
 									</ul>
 								</div>
