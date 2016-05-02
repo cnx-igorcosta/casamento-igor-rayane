@@ -1,4 +1,4 @@
-var App = angular.module('mensagensApp', ['ngResource']);
+var App = angular.module('mensagensApp', ['ngResource', 'ngScrollbars']);
 
 App.controller('mensagensCtrl', function($scope, $resource){
 
@@ -11,6 +11,17 @@ App.controller('mensagensCtrl', function($scope, $resource){
     {
     'update': { method:'PUT'}
   });
+
+  $scope.config = {
+    autoHideScrollbar: false,
+    theme: 'light',
+    advanced:{
+        updateOnContentResize: true
+    },
+        setHeight: 200,
+        scrollInertia: 0
+    };
+
 
   $scope.mensagens = [];
   $scope.mensagem = {};

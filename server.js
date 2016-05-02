@@ -21,10 +21,10 @@ app.get('/', function(req, res){
     res.sendFile('index.html', { root: __dirname  } );
 });
 app.get('/controle-convidados', function(req, res){
-    res.sendFile('convidados.html', { root: __dirname  } );
+    res.sendFile('./pages/convidados.html', { root: __dirname  } );
 });
 app.get('/controle-mensagens', function(req, res){
-    res.sendFile('mensagens.html', { root: __dirname  } );
+    res.sendFile('./pages/mensagens.html', { root: __dirname  } );
 });
 
 defaultRoute(app);

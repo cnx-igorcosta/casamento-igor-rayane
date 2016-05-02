@@ -2,7 +2,7 @@ var App = angular.module('convidadosApp', ['ngResource']);
 
 App.controller('convidadosCtrl', function($scope, $resource){
 
-  var Convidado = $resource('/api/convidados', null, {
+  var Convidado = $resource('/api/convidados/:_id', {_id:'@_id'},{
     'update': { method:'PUT'}
   });
 
@@ -46,9 +46,10 @@ App.controller('convidadosCtrl', function($scope, $resource){
   };
 
   $scope.deletarConvidado = function($event, convidado){
-    $event.preventDefault()
-    var Convi = $resource('/api/convidados/:_id', {_id:'@_id'});
-    Convi.remove({_id: convidado._id});
+    $event.preventDefault();
+    // var Convi = $resource('/api/convidados/:_id', {_id:'@_id'});
+    // Convi.remove({_id: convidado._id});
+    Convidado.remove({_id: convidado._id});
     var index = $scope.convidados.indexOf(convidado);
     $scope.convidados.splice(index, 1);
   };
