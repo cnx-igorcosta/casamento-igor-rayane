@@ -2,21 +2,8 @@ var express = require('express');
 var bodyParser  = require('body-parser');
 var connection = require('../config/database.js');
 var Convidado = require('../models/convidado');
-var Mensagem = require('../models/mensagem');
 
-module.exports = function(app){
-
-  // configure app to use bodyParser()
-  app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(bodyParser.json());
-  var router = express.Router();
-  app.use('/api', router);
-
-  // middleware to use for all requests
-  router.use(function(req, res, next) {
-      // do logging
-      next(); // make sure we go to the next routes and don't stop here
-  });
+module.exports = function(router){
 
   router.route('/convidados/:nome')
 
@@ -92,40 +79,6 @@ module.exports = function(app){
             if (err)
                 res.send(err);
             res.json({ message: 'Successfully deleted' });
-        });
-    });
-
-    router.route('/mensagens')
-    //GET
-    .get(function(req, res){
-      var query = {};
-      Mensagem.find({}).sort({createdAt: -1})
-        .exec(function(err, mensagens) {
-                if (err)
-                console.log(err);
-                else{
-                  var retorno = [];
-                  for(var i=0; i<mensagens.length; i++){
-                    var msg = {
-                      nome: mensagens[i].nome,
-                      texto: mensagens[i].texto
-                    }
-                    retorno.push(msg);
-                  }
-                  res.send(JSON.stringify(retorno));
-                }
-        });
-      })
-      //POST
-      .post(function(req, res){
-        var msg = new Mensagem({
-          nome: req.body.nome,
-          texto: req.body.texto
-        });
-        msg.save(function(err){
-          if (err)
-            res.send(err);
-          res.json({ message: 'Mensagem created!' });
         });
     });
 };

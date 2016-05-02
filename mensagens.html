@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html ng-app="mensagensApp">
+	<head>
+		<title>Casamento Igor & Rayane</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/comum.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
+	</head>
+	<body class="landing">
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<!-- Page Wrapper -->
+		<div id="page-wrapper" class="slide slide1">
+			<input type="hidden" id="nextSlide" value="">
+			<input type="hidden" id="nextContainer" value="">
+				<!-- Header -->
+					<header id="header" class="alt">
+						<!--<h1><a href="index.html">Igor & Rayane</a></h1>-->
+						<h1><a href="index.html">Igor & Rayane</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="#banner" class="scrolly">Página Inicial</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+					<!-- MURAL -->
+					<section id="mural" class="wrapper style6 special">
+						<div class="inner" ng-controller="mensagensCtrl">
+							<header class="major">
+								<h2>Mural de Mensagens</h2>
+								<p></p>
+								<div id="escrever-mural" class="row uniform">
+									<div class="4u 12u$(small)">
+										<input type="text" name="nome-mural" id="nome-mural" ng-model="mensagem.nome" placeholder="Nome" />
+									</div>
+									<div class="8u 12u$(small)">
+										<textarea name="mensagem-mural" id="mensagem-mural" ng-model="mensagem.texto" placeholder="Mensagem" rows="3"></textarea>
+									</div>
+									<div class="12u$ 12u$(small)">
+										<a href="#" id="enviar-mensagem" name="enviar-mensagem" ng-click="salvarMensagem($event, mensagem);" class="button special">Salvar</a></li>
+										<a href="#" id="cancelar-mensagem" name="cancelar-mensagem" ng-click="cancelarMensagem($event);" class="button small">Cancelar</a></li>
+									</div>
+								</div>
+							</header>
+							<div id="mensagens" style="height:500px; overflow:auto;">
+								<div>
+									<ul class="features" ng-repeat="msg in mensagens" >
+										<li class="icon fa-user">
+											<h3>{{msg.nome}}</h3>
+										</li>
+										<li class="icon fa-comment" style="width:40%">
+											<p>{{msg.texto}}</p>
+										</li>
+										<li style="width:30%">
+											<a href="#" id="editar-mensagem" name="editar-mensagem" ng-click="editarMensagem($event, mensagens[$index]);" class="button small">Editar</a>
+											<a href="#" id="deletar-mensagem" name="deletar-mensagem" ng-click="deletarMensagem($event, mensagens[$index]);" class="button small">Deletar</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<!-- <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li> -->
+							<li><a href="#" class="icon fa-facebook facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram instagram"><span class="label">Instagram</span></a></li>
+							<!-- <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+							<!-- <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li> -->
+						</ul>
+						<ul class="copyright">
+							<li>Casamento Igor & Rayane</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.23/jquery-ui.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+			<script src="assets/js/angular.min.js"></script>
+			<script src="assets/js/angular-resource.min.js"></script>
+			<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script> -->
+			<script src="assets/js/mensagensApp.js"></script>
+	</body>
+</html>

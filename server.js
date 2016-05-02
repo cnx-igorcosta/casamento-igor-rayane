@@ -3,7 +3,8 @@ var app = express();
 // var bodyParser  = require('body-parser');
 var connection = require('./app/config/database.js');
 // var Convidado = require('./app/models/convidado');
-var routes = require('./app/routes/route');
+// var routes = require('./app/routes/route');
+var defaultRoute = require('./app/routes/defaultRoute');
 
 //conexão com banco
 var uri = process.env.MONGODB_URI || 'mongodb://localhost/casamento-app';
@@ -22,8 +23,11 @@ app.get('/', function(req, res){
 app.get('/controle-convidados', function(req, res){
     res.sendFile('convidados.html', { root: __dirname  } );
 });
+app.get('/controle-mensagens', function(req, res){
+    res.sendFile('mensagens.html', { root: __dirname  } );
+});
 
-routes(app);
+defaultRoute(app);
 
 // START THE SERVER
 // =============================================================================

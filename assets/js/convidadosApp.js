@@ -1,5 +1,4 @@
-
-var App = angular.module('convidadosApp', ['ngResource'])
+var App = angular.module('convidadosApp', ['ngResource']);
 
 App.controller('convidadosCtrl', function($scope, $resource){
 
@@ -16,7 +15,7 @@ App.controller('convidadosCtrl', function($scope, $resource){
       $scope.convidados = convs;
       $scope.mostrarTabela = true;
     });
-  }
+  };
 
   $scope.iniciar();
 
@@ -48,7 +47,6 @@ App.controller('convidadosCtrl', function($scope, $resource){
 
   $scope.deletarConvidado = function($event, convidado){
     $event.preventDefault()
-    console.log(convidado._id);
     var Convi = $resource('/api/convidados/:_id', {_id:'@_id'});
     Convi.remove({_id: convidado._id});
     var index = $scope.convidados.indexOf(convidado);
