@@ -1,4 +1,4 @@
-var App = angular.module('casamentoApp', ['ngResource', 'autocomplete']);
+var App = angular.module('casamentoApp', ['ngResource', 'autocomplete', 'ngScrollbars']);
 
 App.controller('confirmacaoCtrl', function($scope, $resource){
 
@@ -67,9 +67,25 @@ App.controller('confirmacaoCtrl', function($scope, $resource){
 
 App.controller('muralCtrl', function($scope, $resource){
 
-  var Mensagem = $resource('/api/mensagens', null, {
-    'get' : { method: 'GET', isArray:true}
+  var Mensagem = $resource('/api/mensagens/:_id/:nome/:texto',
+    {
+      _id:'@_id',
+      nome:'@nome',
+      texto:'@texto'
+    },
+    {
+    'update': { method:'PUT'}
   });
+
+  $scope.config = {
+    autoHideScrollbar: false,
+    theme: 'light',
+    advanced:{
+        updateOnContentResize: true
+    },
+        setHeight: 400,
+        scrollInertia: 0
+  };
 
   $scope.mensagem = {};
   $scope.mensagens = [];
@@ -77,9 +93,6 @@ App.controller('muralCtrl', function($scope, $resource){
   $scope.iniciarMensagem = function(){
     Mensagem.query(function(convs){
       $scope.mensagens = convs;
-      // for(var i=0; i<msgs.length; i++){
-      //   $scope.nomes.push(convs[i].nome);
-      // }
     });
   }
   $scope.iniciarMensagem();
@@ -88,17 +101,25 @@ App.controller('muralCtrl', function($scope, $resource){
     return $scope.mensagens.length > 0;
   }
 
-  $scope.enviarMensagem = function($event, mensagem){
+  $scope.salvarMensagem = function($event, mensagem){
     $event.preventDefault();
-    //CRIACAO
-    Mensagem.save($scope.mensagem, function(data){
-      $scope.mensagens.splice(0, 0, mensagem);
-      // $scope.mensagens.push(mensagem);
-      $scope.mensagem = {};
-    });
-  }
+    if(mensagem._id){
+      Mensagem.update({_id: mensagem._id, nome: mensagem.nome, texto: mensagem.texto});
+      angular.forEach($scope.mensagens, function(msg, key) {
+        if(msg._id === mensagem._id){
+          msg.nome = mensagem.nome;
+          msg.texto = mensagem.texto;
+          $scope.mensagem = {};
+        }
+      });
+    }else{
+      Mensagem.save({nome:mensagem.nome, texto:mensagem.texto}, function(data){
+        $scope.mensagens.splice(0, 0, mensagem);
+        $scope.mensagem = {};
+      });
+    }
+  };
 });
-
 /*angular.module('casamentoApp', [])*/
 App.directive('autoComplete', function($timeout) {
       return function(scope, iElement, iAttrs) {

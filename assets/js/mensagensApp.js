@@ -18,7 +18,7 @@ App.controller('mensagensCtrl', function($scope, $resource){
     advanced:{
         updateOnContentResize: true
     },
-        setHeight: 200,
+        setHeight: 400,
         scrollInertia: 0
     };
 

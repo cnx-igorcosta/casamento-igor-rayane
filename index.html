@@ -17,7 +17,7 @@
 		<link rel="stylesheet" href="assets/css/horizon-swiper.min.css" />
     <link rel="stylesheet" href="assets/css/horizon-theme.min.css"/>
     <link rel="stylesheet" href="assets/css/autocomplete.css"/>
-    <link rel="stylesheet" href="assets/css/nanoscroller.css"/>
+		<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
@@ -508,13 +508,13 @@
 										<textarea name="mensagem-mural" id="mensagem-mural" ng-model="mensagem.texto" placeholder="Digite sua mensagem" rows="3"></textarea>
 									</div>
 									<div class="12u$ 12u$(small)">
-										<a href="#" id="enviar-mensagem" name="enviar-mensagem" ng-click="enviarMensagem($event, mensagem);" class="button special icon fa-commenting">Enviar Mensagem</a></li>
+										<a href="#" id="enviar-mensagem" name="enviar-mensagem" ng-click="salvarMensagem($event, mensagem);" class="button special icon fa-commenting">Enviar Mensagem</a></li>
 										<a href="#" id="cancelar-mensagem" name="cancelar-mensagem" onclick="cancelarMensagem($event);" class="button small">Cancelar</a></li>
 									</div>
 								</div>
 							</header>
-							<div id="mensagens" class="nano" style="height:500px; overflow-y:none;" ng-show="hasMensagem">
-								<div class="nano-content">
+							<div id="mensagens" ng-show="hasMensagem" ng-scrollbars ng-scrollbars-config="config">
+								<div>
 									<ul class="features" ng-repeat="msg in mensagens">
 										<li class="icon fa-user">
 											<h3>{{msg.nome}}</h3>
@@ -615,6 +615,8 @@
 
 			<script src="assets/js/angular.min.js"></script>
 			<script src="assets/js/angular-resource.min.js"></script>
+			<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+			<script src="assets/js/scrollbars.min.js"></script>
 			<script src="assets/js/autocomplete.js"></script>
 			<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script> -->
 			<script src="assets/js/casamentoApp.js"></script>
