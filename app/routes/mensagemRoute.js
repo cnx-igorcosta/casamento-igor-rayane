@@ -38,7 +38,7 @@ router.route('/mensagens/')
     msg.save(function(err){
       if (err)
         res.send(err);
-      res.json({ message: 'Mensagem created!' });
+      res.json(msg);
     });
   });
   //PUT

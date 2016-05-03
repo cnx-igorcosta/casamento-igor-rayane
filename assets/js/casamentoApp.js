@@ -89,6 +89,14 @@ App.controller('muralCtrl', function($scope, $resource){
 
   $scope.mensagem = {};
   $scope.mensagens = [];
+  $scope.camposObrigatorios = false;
+  $scope.showFormMural = false;
+
+  $scope.showMural = function($event){
+    $event.preventDefault();
+    $scope.camposObrigatorio = false;
+    $scope.showFormMural = true;
+  }
 
   $scope.iniciarMensagem = function(){
     Mensagem.query(function(msgs){
@@ -103,23 +111,47 @@ App.controller('muralCtrl', function($scope, $resource){
 
   $scope.salvarMensagem = function($event, mensagem){
     $event.preventDefault();
-    if(mensagem._id){
-      Mensagem.update({_id: mensagem._id, nome: mensagem.nome, texto: mensagem.texto});
-      angular.forEach($scope.mensagens, function(msg, key) {
-        if(msg._id === mensagem._id){
-          msg.nome = mensagem.nome;
-          msg.texto = mensagem.texto;
-          $scope.mensagem = {};
-        }
-      });
+    $scope.camposObrigatorios = false;
+    //UPDATE
+    if(camposPreenchidos(mensagem)){
+      if(mensagem._id){
+        Mensagem.update({_id: mensagem._id, nome: mensagem.nome, texto: mensagem.texto});
+        angular.forEach($scope.mensagens, function(msg, key) {
+          if(msg._id === mensagem._id){
+            msg.nome = mensagem.nome;
+            msg.texto = mensagem.texto;
+            $scope.mensagem = {};
+          }
+        });
+      //SAVE
+      }else{
+          Mensagem.save({nome:mensagem.nome, texto:mensagem.texto}, function(msg){
+            $scope.mensagens.splice(0, 0, mensagem);
+            mensagem._id = msg._id;
+            mensagem.data = msg.createdAt;
+            $scope.mensagem = {};
+          });
+      }
     }else{
-      Mensagem.save({nome:mensagem.nome, texto:mensagem.texto}, function(data){
-        $scope.mensagens.splice(0, 0, mensagem);
-        $scope.mensagem = {};
-      });
+      $scope.camposObrigatorios = true;
     }
   };
+
+  function camposPreenchidos(mensagem){
+    return (mensagem.nome && mensagem.texto)
+  }
+
+  $scope.cancelarMensagem = function($event){
+    $event.preventDefault();
+    $scope.camposObrigatorio = false;
+    $scope.showFormMural = false;
+    $scope.mensagem = {};
+  }
 });
+
+
+
+
 /*angular.module('casamentoApp', [])*/
 App.directive('autoComplete', function($timeout) {
       return function(scope, iElement, iAttrs) {

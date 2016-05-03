@@ -496,11 +496,11 @@
 						<div class="inner" ng-controller="muralCtrl">
 							<header class="major">
 								<h2>Mural de Mensagens</h2>
-								<p></p>
+								<p ng-show="camposObrigatorios">Digite nome e mensagem para enviar.</p>
 								<p>
-									<a href="#" id="escrever-btn" class="button special small" onclick="showFormMural(event);">Escrever Mensagem</a>
+									<a href="#" id="escrever-btn" class="button special small" ng-click="showMural($event);" ng-hide="showFormMural">Escrever Mensagem</a>
 								</p>
-								<div id="escrever-mural" class="row uniform" style="display:none;">
+								<div id="escrever-mural" class="row uniform" ng-show="showFormMural">
 									<div class="4u 12u$(small)">
 										<input type="text" name="nome-mural" id="nome-mural" ng-model="mensagem.nome" placeholder="Nome" />
 									</div>
@@ -509,7 +509,7 @@
 									</div>
 									<div class="12u$ 12u$(small)">
 										<a href="#" id="enviar-mensagem" name="enviar-mensagem" ng-click="salvarMensagem($event, mensagem);" class="button special icon fa-commenting">Enviar Mensagem</a></li>
-										<a href="#" id="cancelar-mensagem" name="cancelar-mensagem" onclick="cancelarMensagem($event);" class="button small">Cancelar</a></li>
+										<a href="#" id="cancelar-mensagem" name="cancelar-mensagem" ng-click="cancelarMensagem($event);" class="button small">Cancelar</a></li>
 									</div>
 								</div>
 							</header>
@@ -518,7 +518,7 @@
 									<ul class="features" ng-repeat="msg in mensagens">
 										<li class="icon fa-user">
 											<h3>{{msg.nome}}</h3>
-											<p>{{ msg.data | date : 'dd/mm/yyyy'}}</p>
+											<p>{{ msg.data | date : 'dd/MM/yyyy'}}</p>
 										</li>
 										<li class="icon fa-comment">
 											<p>{{msg.texto}}</p>
