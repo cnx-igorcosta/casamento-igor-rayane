@@ -19,7 +19,8 @@ router.route('/mensagens/')
                 var msg = {
                   _id: mensagens[i]._id,
                   nome: mensagens[i].nome,
-                  texto: mensagens[i].texto
+                  texto: mensagens[i].texto,
+                  data: mensagens[i].createdAt
                 }
                 retorno.push(msg);
               }
