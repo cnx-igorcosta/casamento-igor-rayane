@@ -66,6 +66,7 @@
 									<ul class="features" ng-repeat="msg in mensagens" >
 										<li class="icon fa-user">
 											<h3>{{msg.nome}}</h3>
+											<p>{{ msg.data | date : 'dd/mm/yyyy'}}</p>
 										</li>
 										<li class="icon fa-comment" style="width:40%">
 											<p>{{msg.texto}}</p>

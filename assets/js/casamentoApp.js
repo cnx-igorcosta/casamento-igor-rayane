@@ -91,8 +91,8 @@ App.controller('muralCtrl', function($scope, $resource){
   $scope.mensagens = [];
 
   $scope.iniciarMensagem = function(){
-    Mensagem.query(function(convs){
-      $scope.mensagens = convs;
+    Mensagem.query(function(msgs){
+      $scope.mensagens = msgs;
     });
   }
   $scope.iniciarMensagem();
