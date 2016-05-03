@@ -285,3 +285,7 @@
 .mCSB_buttonUp{
   border-bottom: 0 !important;
 }
+
+#contagem{
+  font-size: 1.5em;
+}
