@@ -24,6 +24,13 @@ $(document).ready(function(){
   }
   //carrousel padrinhos
   initializeSwipe();
+
+  new Photostack( document.getElementById( 'photostack-1' ), {
+				callback : function( item ) {
+					//console.log(item)
+				}
+			} );
+
 });
 
 
