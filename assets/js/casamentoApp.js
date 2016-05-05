@@ -91,6 +91,7 @@ App.controller('muralCtrl', function($scope, $resource){
   $scope.mensagens = [];
   $scope.camposObrigatorios = false;
   $scope.showFormMural = false;
+  $scope.sending = false;
 
   $scope.showMural = function($event){
     $event.preventDefault();
@@ -112,6 +113,7 @@ App.controller('muralCtrl', function($scope, $resource){
   $scope.salvarMensagem = function($event, mensagem){
     $event.preventDefault();
     $scope.camposObrigatorios = false;
+    $scope.sending = true;
     //UPDATE
     if(camposPreenchidos(mensagem)){
       if(mensagem._id){
@@ -121,6 +123,7 @@ App.controller('muralCtrl', function($scope, $resource){
             msg.nome = mensagem.nome;
             msg.texto = mensagem.texto;
             $scope.mensagem = {};
+            $scope.sending = true;
           }
         });
       //SAVE
@@ -130,10 +133,12 @@ App.controller('muralCtrl', function($scope, $resource){
             mensagem._id = msg._id;
             mensagem.data = msg.createdAt;
             $scope.mensagem = {};
+            $scope.sending = true;
           });
       }
     }else{
       $scope.camposObrigatorios = true;
+      $scope.sending = true;
     }
   };
 
@@ -148,8 +153,6 @@ App.controller('muralCtrl', function($scope, $resource){
     $scope.mensagem = {};
   }
 });
-
-
 
 
 /*angular.module('casamentoApp', [])*/
