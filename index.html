@@ -6,7 +6,7 @@
 -->
 <html ng-app="casamentoApp">
 	<head>
-		<title>Casamento Igor & Rayane</title>
+		<title>Casamento Igor &amp; Rayane</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="assets/css/horizon-theme.min.css"/>
     <link rel="stylesheet" href="assets/css/autocomplete.css"/>
 		<link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.css" />
-		<link rel="stylesheet" href="assets/css/component.css" />
+		<link rel="stylesheet" href="assets/css/fotorama.css" />
+		<!-- <link rel="stylesheet" href="assets/css/component.css" /> -->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
@@ -40,8 +41,8 @@
 			<input type="hidden" id="nextContainer" value="">
 				<!-- Header -->
 					<header id="header" class="alt">
-						<!--<h1><a href="index.html">Igor & Rayane</a></h1>-->
-						<h1><a href="index.html">Igor & Rayane</a></h1>
+						<!--<h1><a href="index.html">Igor &amp; Rayane</a></h1>-->
+						<h1><a href="index.html">Igor &amp; Rayane</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -67,7 +68,7 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<h2 id="titulo">Igor & Rayane</h2>
+							<h2 id="titulo">Igor &amp; Rayane</h2>
 							<h3>25 de junho de 2017</h3>
 						</div>
 						<a href="#one" class="more scrolly">Saber mais</a>
@@ -117,7 +118,7 @@
 										<p>Rayane Simões</p>
 									</div>
 									<div class="2u 12u$(large) fiancee">
-										<h1 class="ecom">&</h1>
+										<h1 class="ecom">&amp;</h1>
 									</div>
 									<div class="5u$ 12u$(large) noivo">
 										<h2>O Noivo</h2>
@@ -142,7 +143,7 @@
 									<p>Rayane Simões</p>
 								</div>
 								<div class="fiancee">
-									<h1 class="ecom">&</h1>
+									<h1 class="ecom">&amp;</h1>
 								</div>
 								<div class="noivo">
 									<h2>O Noivo</h2>
@@ -540,109 +541,66 @@
 						<div class="inner">
 							<header class="major">
 								<h2>Álbuns</h2>
-								<p>Em Construção...</p>
 							</header>
+							<div class="row uniform">
+								<div class="4u 12u$(small)" style="margin-bottom:5%;">
+									<a href="#album-amigos" class="scrolly cover">
+										<img id="cover-amigos" class="cover" src="/images/album/amigos/cover.jpg" onclick="openAmigos(event);">
+										<p>Amigos</p>
+									</a>
+								</div>
+								<div class="4u 12u$(small)" style="margin-bottom:5%;">
+									<a href="#album-familia" class="scrolly cover">
+										<img id="cover-familia" class="cover" src="/images/album/familia/cover.jpg" onclick="openFamilia(event);">
+										<p>Família</p>
+									</a>
+								</div>
+								<div class="4u 12u$(small)" style="margin-bottom:5%;">
+									<a href="#album-ier" class="scrolly cover">
+										<img id="cover-ier" class="cover" src="/images/album/ier/cover.jpg" onclick="openIer(event);">
+										<p>Igor &amp; Rayane</p>
+									</a>
+								</div>
+							</div>
 						</div>
-						<section id="photostack-1" class="photostack photostack-start">
-				<div>
-					<figure>
-						<a href="http://goo.gl/Qw3ND4" class="photostack-img"><img src="images/1a.jpg" alt="img01"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Serenity Beach</h2>
-						</figcaption>
-					</figure>
-					<figure>
-						<a href="http://goo.gl/fhwlSP" class="photostack-img"><img src="images/2a.jpg" alt="img02"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Happy Days</h2>
-						</figcaption>
-					</figure>
-					<figure>
-						<img src="images/3a.jpg" alt="img03"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Beautywood</h2>
-						</figcaption>
-					</figure>
-					<figure>
-						<a href="http://goo.gl/49lN3k" class="photostack-img"><img src="images/4a.jpg" alt="img04"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Heaven of time</h2>
-						</figcaption>
-					</figure>
-					<figure>
-						<a href="http://goo.gl/NJ1Dhf" class="photostack-img"><img src="images/5a.jpg" alt="img05"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Speed Racer</h2>
-						</figcaption>
-					</figure>
-					<figure>
-						<a href="http://goo.gl/Ms7VDl" class="photostack-img"><img src="images/6a.jpg" alt="img06"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Forever this</h2>
-						</figcaption>
-					</figure>
-					<figure data-dummy>
-						<a href="#" class="photostack-img"><img src="images/7a.jpg" alt="img07"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Lovely Green</h2>
-						</figcaption>
-					</figure>
-					<figure data-dummy>
-						<a href="#" class="photostack-img"><img src="images/8a.jpg" alt="img08"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Wonderful</h2>
-						</figcaption>
-					</figure>
-					<figure data-dummy>
-						<a href="#" class="photostack-img"><img src="images/9a.jpg" alt="img09"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Love Addict</h2>
-						</figcaption>
-					</figure>
-					<figure data-dummy>
-						<a href="#" class="photostack-img"><img src="images/10a.jpg" alt="img10"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Friendship</h2>
-						</figcaption>
-					</figure>
-					<figure data-dummy>
-						<a href="#" class="photostack-img"><img src="images/11a.jpg" alt="img11"/></a>
-						<figcaption>
-							<h2 class="photostack-title">White Nights</h2>
-						</figcaption>
-					</figure>
-					<figure data-dummy>
-						<a href="#" class="photostack-img"><img src="images/12a.jpg" alt="img12"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Serendipity</h2>
-						</figcaption>
-					</figure>
-					<figure data-dummy>
-						<a href="#" class="photostack-img"><img src="images/13a.jpg" alt="img13"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Pure Soul</h2>
-						</figcaption>
-					</figure>
-					<figure data-dummy>
-						<a href="#" class="photostack-img"><img src="images/14a.jpg" alt="img14"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Winds of Peace</h2>
-						</figcaption>
-					</figure>
-					<figure data-dummy>
-						<a href="#" class="photostack-img"><img src="images/15a.jpg" alt="img15"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Shades of blue</h2>
-						</figcaption>
-					</figure>
-					<figure data-dummy>
-						<a href="#" class="photostack-img"><img src="images/16a.jpg" alt="img16"/></a>
-						<figcaption>
-							<h2 class="photostack-title">Lightness</h2>
-						</figcaption>
-					</figure>
-				</div>
-			</section>
+						<div id="album-amigos" style="display:none" class="fotorama" data-width="100%" data-max-width="100%" data-height="90%"
+						   data-nav="thumbs" data-loop="true">
+							<a href="/images/album/amigos/1.jpg"><img src="/images/album/amigos/1-thumb.jpg"></a>
+							<a href="/images/album/amigos/2.jpg"><img src="/images/album/amigos/2-thumb.jpg"></a>
+							<a href="/images/album/amigos/3.jpg"><img src="/images/album/amigos/3-thumb.jpg"></a>
+							<a href="/images/album/amigos/4.jpg"><img src="/images/album/amigos/4-thumb.jpg"></a>
+							<a href="/images/album/amigos/5.jpg"><img src="/images/album/amigos/5-thumb.jpg"></a>
+							<a href="/images/album/amigos/6.jpg"><img src="/images/album/amigos/6-thumb.jpg"></a>
+							<a href="/images/album/amigos/7.jpg"><img src="/images/album/amigos/7-thumb.jpg"></a>
+							<a href="/images/album/amigos/8.jpg"><img src="/images/album/amigos/8-thumb.jpg"></a>
+						</div>
+						<div id="album-familia" style="display:none" class="fotorama" data-width="100%" data-max-width="100%" data-height="90%"
+						   data-nav="thumbs" data-loop="true">
+							<a href="/images/album/familia/1.jpg"><img src="/images/album/familia/1-thumb.jpg"></a>
+							<a href="/images/album/familia/2.jpg"><img src="/images/album/familia/2-thumb.jpg"></a>
+							<a href="/images/album/familia/3.jpg"><img src="/images/album/familia/3-thumb.jpg"></a>
+							<a href="/images/album/familia/4.jpg"><img src="/images/album/familia/4-thumb.jpg"></a>
+							<a href="/images/album/familia/5.jpg"><img src="/images/album/familia/5-thumb.jpg"></a>
+							<a href="/images/album/familia/6.jpg"><img src="/images/album/familia/6-thumb.jpg"></a>
+							<a href="/images/album/familia/7.jpg"><img src="/images/album/familia/7-thumb.jpg"></a>
+							<a href="/images/album/familia/8.jpg"><img src="/images/album/familia/8-thumb.jpg"></a>
+							<a href="/images/album/familia/9.jpg"><img src="/images/album/familia/9-thumb.jpg"></a>
+							<a href="/images/album/familia/10.jpg"><img src="/images/album/familia/10-thumb.jpg"></a>
+							<a href="/images/album/familia/11.jpg"><img src="/images/album/familia/11-thumb.jpg"></a>
+							<a href="/images/album/familia/12.jpg"><img src="/images/album/familia/12-thumb.jpg"></a>
+							<a href="/images/album/familia/13.jpg"><img src="/images/album/familia/13-thumb.jpg"></a>
+						</div>
+						<div id="album-ier" style="display:none" class="fotorama" data-width="100%" data-max-width="100%" data-height="100%"
+						   data-nav="thumbs" data-loop="true">
+							<a href="/images/album/amigos/1.jpg"><img src="/images/album/amigos/1-thumb.jpg"></a>
+							<a href="/images/album/amigos/2.jpg"><img src="/images/album/amigos/2-thumb.jpg"></a>
+							<a href="/images/album/amigos/3.jpg"><img src="/images/album/amigos/3-thumb.jpg"></a>
+							<a href="/images/album/amigos/4.jpg"><img src="/images/album/amigos/4-thumb.jpg"></a>
+							<a href="/images/album/amigos/5.jpg"><img src="/images/album/amigos/5-thumb.jpg"></a>
+							<a href="/images/album/amigos/6.jpg"><img src="/images/album/amigos/6-thumb.jpg"></a>
+							<a href="/images/album/amigos/7.jpg"><img src="/images/album/amigos/7-thumb.jpg"></a>
+							<a href="/images/album/amigos/8.jpg"><img src="/images/album/amigos/8-thumb.jpg"></a>
+						</div>
 					</section>
 
 
@@ -702,7 +660,7 @@
 							<!-- <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li> -->
 						</ul>
 						<ul class="copyright">
-							<li>Casamento Igor & Rayane</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>Casamento Igor &amp; Rayane</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</footer>
 
@@ -715,9 +673,10 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/horizon-swiper.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/jquery.nanoscroller.js"></script>
-			<script src="assets/js/classie.js"></script>
-			<script src="assets/js/photostack.js"></script>
+			<script src="assets/js/fotorama.js"></script>
+			<!-- <script src="assets/js/jquery.nanoscroller.js"></script> -->
+			<!-- <script src="assets/js/classie.js"></script> -->
+			<!-- <script src="assets/js/photostack.js"></script> -->
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/comum.js"></script>

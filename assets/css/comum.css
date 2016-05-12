@@ -289,3 +289,15 @@
 #contagem{
   font-size: 1.5em;
 }
+
+a.cover{
+  border-bottom: 0 !important;
+}
+
+img.cover {
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}

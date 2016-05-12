@@ -19,17 +19,17 @@ $(document).ready(function(){
     e.preventDefault();
     window.open('http://www.pontofrio.com.br/Site/ListaGerenciadaLandingPage.aspx?idListaCompra=482124');
   });
-  if(!skel.vars.mobile){
-    $('.nano').nanoScroller();
-  }
+  // if(!skel.vars.mobile){
+  //   $('.nano').nanoScroller();
+  // }
   //carrousel padrinhos
   initializeSwipe();
 
-  new Photostack( document.getElementById( 'photostack-1' ), {
-				callback : function( item ) {
-					//console.log(item)
-				}
-			} );
+  // new Photostack( document.getElementById( 'photostack-1' ), {
+	// 			callback : function( item ) {
+	// 				//console.log(item)
+	// 			}
+	// 		} );
 
 });
 
@@ -156,6 +156,28 @@ function cancelarMensagem(e){
   e.preventDefault();
   $('#escrever-mural').fadeOut();
   $('#escrever-btn').fadeIn();
+}
+
+
+function openAmigos(e){
+  e.preventDefault();
+  fechaTodos();
+  $('#album-amigos').fadeIn();
+}
+function openFamilia(e){
+  e.preventDefault();
+  fechaTodos();
+  $('#album-familia').fadeIn();
+}
+function openIer(e){
+  e.preventDefault();
+  fechaTodos();
+  $('#album-amigos').fadeIn();
+}
+function fechaTodos(){
+  $('#album-amigos').hide();
+  $('#album-familia').hide();
+  $('#album-ier').hide();
 }
 
 //8B2E5F
