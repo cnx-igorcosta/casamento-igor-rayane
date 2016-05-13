@@ -108,7 +108,7 @@ function initializeSwipe(){
   var itemsDaminhas = isSmallScreen() ? showItems : 3
   $('#horizon-daminhas').horizonSwiper({
     dots: true,
-    arrows: false,
+    arrows: true,
     animationSpeed: 700,
     showItems: itemsDaminhas
   });

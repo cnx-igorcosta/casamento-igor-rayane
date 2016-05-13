@@ -241,6 +241,19 @@
     width: 100px;
   }
 }
+.horizon-prev, .horizon-next{
+  width: 20px !important;
+  padding: 0 2em;
+  top: 20% !important;
+}
+.horizon-prev{
+  margin-left: -5%;
+}
+.horizon-next{
+  margin-right: -5%;
+}
+
+
 #lista.features li{
   cursor: pointer;
 }
