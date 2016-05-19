@@ -254,7 +254,6 @@
 										<tbody>
 											<tr ng-repeat="convidado in convidados">
 												<td>{{convidado.nome}}</td>
-												<!-- <td>{{status(convidado)}}</td> -->
 												<td style="text-align: right;" ng-show="!mostrarStatus(convidados[$index]);">
 													<a href="#" class=" button special small" ng-click="confirmarPresenca($event, convidados[$index], true);">Confirmar</a>
 													<a href="#" class=" button small" ng-click="confirmarPresenca($event, convidados[$index], false);">Não poderei ir</a>
@@ -288,6 +287,16 @@
 												</tr>
 											</tfoot>
 									</table>
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input type="email" id="confirmacao-email" value="" ng-model="convidado.email" placeholder="Email" />
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<input type="text" id="confirmacao-telefone" value="" ng-model="convidado.telefone" placeholder="Telefone" />
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<a href="#" class=" button special small" ng-click="confirmarPresenca($event, convidados[$index], true);">Confirmar</a>
+									<a href="#" class=" button small" ng-click="confirmarPresenca($event, convidados[$index], false);">Não poderei ir</a>
 								</div>
 							</div>
 						</div>
@@ -542,26 +551,37 @@
 							<header class="major">
 								<h2>Álbuns</h2>
 							</header>
-							<div class="row uniform">
+							<div class="row uniform ">
 								<div class="4u 12u$(small)" style="margin-bottom:5%;">
-									<a href="#album-amigos" class="scrolly cover">
-										<img id="cover-amigos" class="cover" src="/images/album/amigos/cover.jpg" onclick="openAmigos(event);">
-										<p>Amigos</p>
-									</a>
+									<div class="grow pic">
+										 <!-- <div class="image-overlay-content">
+											<h2>AMIGOS</h2>
+											<a href="#" class="button">Visualizar</a>
+										</div> -->
+										<a href="#album-amigos" class="scrolly cover">
+											<img id="cover-amigos" src="/images/album/amigos/cover.jpg" onclick="openAmigos(event);">
+										</a>
+									</div>
+									<p>Amigos</p>
 								</div>
 								<div class="4u 12u$(small)" style="margin-bottom:5%;">
-									<a href="#album-familia" class="scrolly cover">
-										<img id="cover-familia" class="cover" src="/images/album/familia/cover.jpg" onclick="openFamilia(event);">
-										<p>Família</p>
-									</a>
+									<div class="grow pic">
+										<a href="#album-familia" class="scrolly">
+											<img id="cover-familia" src="/images/album/familia/cover.jpg" onclick="openFamilia(event);">
+										</a>
+									</div>
+									<p>Família</p>
 								</div>
 								<div class="4u 12u$(small)" style="margin-bottom:5%;">
-									<a href="#album-ier" class="scrolly cover">
-										<img id="cover-ier" class="cover" src="/images/album/ier/cover.jpg" onclick="openIer(event);">
-										<p>Igor &amp; Rayane</p>
-									</a>
+									<div class="grow pic">
+										<a href="#album-ier" class="scrolly">
+											<img id="cover-ier" src="/images/album/ier/cover.jpg" onclick="openIer(event);">
+										</a>
+									</div>
+								<p>Igor &amp; Rayane</p>
 								</div>
 							</div>
+
 						</div>
 						<div id="album-amigos" style="display:none" class="fotorama" data-width="100%" data-max-width="100%" data-height="90%"
 						   data-nav="thumbs" data-loop="true">
