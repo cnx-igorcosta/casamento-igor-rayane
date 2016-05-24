@@ -6,14 +6,14 @@ $(document).ready(function(){
   if($('#titulo').css('opacity') == 0) {
     setTimeout(verificaTitulo,500);
   }else{
-    setTimeout(primeiraTroca,5000);
+    setTimeout(primeiraTroca,3500);
   }
 
 });
 
 function verificaTitulo(){
   if($('#titulo').css('opacity') == 1) {
-    setTimeout(primeiraTroca,5000);
+    setTimeout(primeiraTroca,3500);
   }else{
     setTimeout(verificaTitulo,500);
   }
@@ -25,7 +25,7 @@ function primeiraTroca(){
   //$('#banner').addClass('consistent');
   setTimeout(function(){
     $('#banner').addClass('consistent');
-    setTimeout(proximaTroca,8000);
+    setTimeout(proximaTroca,5000);
   },1000);
   $('#nextSlide').val(2);
   $('#nextContainer').val(1);
@@ -51,7 +51,7 @@ function proximaTroca(){
   $('#nextSlide').val(nextSlide);
   $('#nextContainer').val(nextContainer);
   //chama novamente a cada 8s
-  setTimeout(proximaTroca,8000);
+  setTimeout(proximaTroca,5000);
 }
 
 /*function proximaTroca(){

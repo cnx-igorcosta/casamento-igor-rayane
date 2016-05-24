@@ -172,7 +172,7 @@ function openFamilia(e){
 function openIer(e){
   e.preventDefault();
   fechaTodos();
-  $('#album-amigos').fadeIn();
+  $('#album-ier').fadeIn();
 }
 function fechaTodos(){
   $('#album-amigos').hide();
