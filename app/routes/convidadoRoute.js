@@ -13,7 +13,6 @@ module.exports = function(router){
       if(req.params.nome){
           query =  {'nome' : new RegExp(req.params.nome, 'i')};
       }
-      console.log(query);
       Convidado.find(query, function(err, convidados) {
         if (err)
           console.log(err);
@@ -61,10 +60,16 @@ module.exports = function(router){
           if(req.body.confirmado != undefined){
             update.confirmado = req.body.confirmado
           }
-            Convidado.update({_id:req.body._id}, update, function(err){
-            if(err)
-              res.send(err);
-            res.json({ message: 'Convidado updated!' });
+          if(req.body.email != undefined){
+            update.email = req.body.email
+          }
+          if(req.body.telefone != undefined){
+            update.telefone = req.body.telefone
+          }
+          Convidado.update({_id:req.body._id}, update, function(err){
+          if(err)
+            res.send(err);
+          res.json({ message: 'Convidado updated!' });
           });
 
         })

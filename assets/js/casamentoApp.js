@@ -7,11 +7,15 @@ App.controller('confirmacaoCtrl', function($scope, $resource){
     'get' : { method: 'GET', isArray:true}
   });
 
+  $scope.convidado = {};
   $scope.nomes = [];
   $scope.convidados = [];
   $scope.respostaEnviada = undefined;
   $scope.mostrarTabela = false;
   $scope.isLoading = false;
+  $scope.mostrarFormConfirmacao = false;
+  $scope.mostrarMensagem = false;
+  $scope.mensagem = '';
 
   $scope.iniciar = function(){
     Convidado.query(function(convs){
@@ -28,6 +32,8 @@ App.controller('confirmacaoCtrl', function($scope, $resource){
     $scope.mostrarTabela = false;
     $scope.convidados = [];
     $scope.respostaEnviada = undefined;
+    $scope.mostrarFormConfirmacao = false;
+    $scope.mostrarMensagem = false;
 
     var query = {nome : nome};
 
@@ -43,10 +49,26 @@ App.controller('confirmacaoCtrl', function($scope, $resource){
     });
   };
 
+  $scope.responder = function($event, convidado){
+    $event.preventDefault();
+    $scope.mostrarTabela = false;
+    $scope.mostrarFormConfirmacao = true;
+    $scope.convidado = convidado;
+  };
+
   $scope.confirmarPresenca = function($event, convidado, confirma){
     $event.preventDefault();
-    Convidado.update({_id: convidado._id, confirmado: confirma});
+    Convidado.update({
+      _id: convidado._id,
+      email: convidado.email,
+      telefone: convidado.telefone, 
+      confirmado: confirma
+    });
     convidado.confirmado = confirma;
+    $scope.mostrarFormConfirmacao = false;
+    $scope.mostrarMensagem = true;
+    $scope.mensagem = 'Resposta enviada com sucesso!';
+    $scope.nome = '';
   };
 
   $scope.mostrarStatus = function(convidado){
@@ -61,7 +83,12 @@ App.controller('confirmacaoCtrl', function($scope, $resource){
     $event.preventDefault();
     $scope.convidados = [];
     $scope.mostrarTabela = false;
+    // $scope.convidadoSelecionado = false;
     $scope.nome = '';
+    $scope.mostrarFormConfirmacao = false;
+    $scope.mostrarMensagem = false;
+    $scope.mensagem = ''
+    $scope.convidado = {};
   }
 });
 

@@ -226,23 +226,20 @@
 							</header>
 							<div class="row uniform" style="padding-top:5%;">
 								<div class="8u 12u$(small)">
-									<!-- <input type="text" name="confirmacao-nome" id="confirmacao-nome"
-										placeholder="Nome" ng-model="nome"
-										auto-complete ui-items="nomes"/> -->
-
-										<autocomplete ng-model="nome" data="nomes" on-type="updateMovies"></autocomplete>
+									<autocomplete ng-model="nome" data="nomes" on-type="updateMovies" ng-hide="mostrarFormConfirmacao"></autocomplete>
 								</div>
 								<div class="4u 12u$(small)">
 									<ul class="actions fit">
 										<li>
 											<a href="#" id="confirmacao-buscar" name="confirmacao-buscar"
-												class="button special fit" ng-click="buscarConvidado(nome, $event);">
+												class="button special fit" ng-click="buscarConvidado(nome, $event);" ng-hide="mostrarFormConfirmacao">
 													<i ng-show="isLoading" class="fa fa-spinner fa-pulse"></i>
 													<i ng-show="!isLoading" class="fa fa-search"></i> Buscar
 											</a>
 										</li>
 									</ul>
 								</div>
+								<p ng-show="mostrarMensagem">{{mensagem}}</p>
 								<p ng-show="naoEncontrado" class="12u 12u$(small)">Não encontrado</p>
 								<div ng-show="mostrarTabela" class="table-wrapper">
 									<table>
@@ -256,22 +253,11 @@
 											<tr ng-repeat="convidado in convidados">
 												<td>{{convidado.nome}}</td>
 												<td style="text-align: right;" ng-show="!mostrarStatus(convidados[$index]);">
-													<a href="#" class=" button special small" ng-click="confirmarPresenca($event, convidados[$index], true);">Confirmar</a>
-													<a href="#" class=" button small" ng-click="confirmarPresenca($event, convidados[$index], false);">Não poderei ir</a>
+													<a href="#" class="button special small" ng-click="responder($event, convidados[$index]);">Responder</a>
 												</td>
 												<td style="text-align: left;" ng-show="mostrarStatus(convidados[$index]);">
 													Resposta enviada
 												</td>
-												<!-- <td>
-													<input type="radio" id="confirmado-{{$index}}" name="confirmacao-{{$index}}" ng-model="convidado.confirmado" ng-value="true">
-													<label for="confirmado-{{$index}}">Confirmar</label>
-													<a href="#" onclick="javascript:function(){return false}" class=" button special small icon fa-check">Confirmar</a></li>
-												</td>
-												<td>
-													<input type="radio" id="nao-confirmado-{{$index}}" name="confirmacao-{{$index}}" ng-model="convidado.confirmado" ng-value="false">
-													<label for="nao-confirmado-{{$index}}">Não poderei ir</label>
-													 <a href="#" onclick="javascript:function(){return false}" class=" button special small icon fa-check">Confirmar</a></li>
-												</td> -->
 											</tr>
 											<tfoot>
 												<tr>
@@ -279,7 +265,6 @@
 														<div class="12u 12u$(small)">
 															<ul class="actions fit">
 																<li>
-																	<!-- <a href="#" class=" button special small icon fa-check" ng-click="salvar($event);">Salvar</a> -->
 																	<a href="#" class=" button small" ng-click="cancelar($event);">Limpar</a>
 																</li>
 															</ul>
@@ -289,15 +274,21 @@
 											</tfoot>
 									</table>
 								</div>
-								<div class="6u$ 12u$(xsmall)">
-									<input type="email" id="confirmacao-email" value="" ng-model="convidado.email" placeholder="Email" />
-								</div>
-								<div class="6u 12u$(xsmall)">
-									<input type="text" id="confirmacao-telefone" value="" ng-model="convidado.telefone" placeholder="Telefone" />
-								</div>
-								<div class="6u 12u$(xsmall)">
-									<a href="#" class=" button special small" ng-click="confirmarPresenca($event, convidados[$index], true);">Confirmar</a>
-									<a href="#" class=" button small" ng-click="confirmarPresenca($event, convidados[$index], false);">Não poderei ir</a>
+								<div class="row uniform" ng-show="mostrarFormConfirmacao">
+									<div class="8u 12u$(small)">
+										<input type="text" id="confirmacao-nome" value="" ng-model="convidado.nome" placeholder="Nome" disabled="true"/>
+									</div>
+									<div class="6u$ 12u$(xsmall)">
+										<input type="email" id="confirmacao-email" value="" ng-model="convidado.email" placeholder="Email" />
+									</div>
+									<div class="6u 12u$(xsmall)">
+										<input type="text" id="confirmacao-telefone" value="" ng-model="convidado.telefone" placeholder="Telefone" />
+									</div>
+									<div class="12u 12u$(xsmall)">
+										<a href="#" class=" button special small" ng-click="confirmarPresenca($event, convidado, true);">Confirmar</a>
+										<a href="#" class=" button special small" ng-click="confirmarPresenca($event, convidado, false);">Não poderei ir</a>
+										<a href="#" class=" button small" ng-click="cancelar($event);">Limpar</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -564,7 +555,8 @@
 							</div>
 								<div class="4u 12u$(small)" style="margin-bottom:5%;">
 									<div class="pic image-wrapper overlay-fade-in">
-							      <img src="./images/album/familia/cover.jpg"/>
+							      <!-- <img src="./images/album/familia/cover.jpg"/> -->
+							      <img src="./images/album/familia/9.jpg"/>
 							      <div class="image-overlay-content">
 							        <h2>Família</h2>
 							        <a href="#album-familia" class="scrolly button small" onclick="openFamilia(event);">Visualizar</a>
@@ -587,47 +579,47 @@
 						   data-nav="thumbs" data-loop="true">
 							<a href="./images/album/amigos/1.jpg"><img src="./images/album/amigos/1-thumb.jpg"></a>
 							<a href="./images/album/amigos/2.jpg"><img src="./images/album/amigos/2-thumb.jpg"></a>
-							<a href="./images/album/amigos/3.jpg"><img src="./images/album/amigos/3-thumb.jpg"></a>
+							<!-- <a href="./images/album/amigos/3.jpg"><img src="./images/album/amigos/3-thumb.jpg"></a> -->
 							<a href="./images/album/amigos/4.jpg"><img src="./images/album/amigos/4-thumb.jpg"></a>
-							<a href="./images/album/amigos/5.jpg"><img src="./images/album/amigos/5-thumb.jpg"></a>
+							<!-- <a href="./images/album/amigos/5.jpg"><img src="./images/album/amigos/5-thumb.jpg"></a>
 							<a href="./images/album/amigos/6.jpg"><img src="./images/album/amigos/6-thumb.jpg"></a>
-							<a href="./images/album/amigos/7.jpg"><img src="./images/album/amigos/7-thumb.jpg"></a>
+							<a href="./images/album/amigos/7.jpg"><img src="./images/album/amigos/7-thumb.jpg"></a> -->
 							<a href="./images/album/amigos/8.jpg"><img src="./images/album/amigos/8-thumb.jpg"></a>
 						</div>
 						<div id="album-familia" style="display:none" class="fotorama" data-width="100%" data-max-width="100%" data-height="90%"
 						   data-nav="thumbs" data-loop="true">
-							<a href="./images/album/familia/1.jpg"><img src="./images/album/familia/1-thumb.jpg"></a>
+							<!-- <a href="./images/album/familia/1.jpg"><img src="./images/album/familia/1-thumb.jpg"></a> -->
 							<a href="./images/album/familia/2.jpg"><img src="./images/album/familia/2-thumb.jpg"></a>
 							<a href="./images/album/familia/3.jpg"><img src="./images/album/familia/3-thumb.jpg"></a>
 							<a href="./images/album/familia/4.jpg"><img src="./images/album/familia/4-thumb.jpg"></a>
 							<a href="./images/album/familia/5.jpg"><img src="./images/album/familia/5-thumb.jpg"></a>
 							<a href="./images/album/familia/6.jpg"><img src="./images/album/familia/6-thumb.jpg"></a>
 							<a href="./images/album/familia/7.jpg"><img src="./images/album/familia/7-thumb.jpg"></a>
-							<a href="./images/album/familia/8.jpg"><img src="./images/album/familia/8-thumb.jpg"></a>
+							<!-- <a href="./images/album/familia/8.jpg"><img src="./images/album/familia/8-thumb.jpg"></a> -->
 							<a href="./images/album/familia/9.jpg"><img src="./images/album/familia/9-thumb.jpg"></a>
 							<a href="./images/album/familia/10.jpg"><img src="./images/album/familia/10-thumb.jpg"></a>
 							<a href="./images/album/familia/11.jpg"><img src="./images/album/familia/11-thumb.jpg"></a>
-							<a href="./images/album/familia/12.jpg"><img src="./images/album/familia/12-thumb.jpg"></a>
+							<!-- <a href="./images/album/familia/12.jpg"><img src="./images/album/familia/12-thumb.jpg"></a> -->
 							<a href="./images/album/familia/13.jpg"><img src="./images/album/familia/13-thumb.jpg"></a>
-							<a href="./images/album/familia/14.jpg"><img src="./images/album/familia/14-thumb.jpg"></a>
+							<!-- <a href="./images/album/familia/14.jpg"><img src="./images/album/familia/14-thumb.jpg"></a> -->
 						</div>
 						<div id="album-ier" style="display:none" class="fotorama" data-width="100%" data-max-width="100%" data-height="90%"
 						   data-nav="thumbs" data-loop="true">
 							<a href="./images/album/ier/1.jpg"><img src="./images/album/ier/1-thumb.jpg"></a>
 							<a href="./images/album/ier/2.jpg"><img src="./images/album/ier/2-thumb.jpg"></a>
-							<a href="./images/album/ier/3.jpg"><img src="./images/album/ier/3-thumb.jpg"></a>
+							<!-- <a href="./images/album/ier/3.jpg"><img src="./images/album/ier/3-thumb.jpg"></a> -->
 							<a href="./images/album/ier/4.jpg"><img src="./images/album/ier/4-thumb.jpg"></a>
 							<a href="./images/album/ier/5.jpg"><img src="./images/album/ier/5-thumb.jpg"></a>
-							<a href="./images/album/ier/6.jpg"><img src="./images/album/ier/6-thumb.jpg"></a>
+							<!-- <a href="./images/album/ier/6.jpg"><img src="./images/album/ier/6-thumb.jpg"></a> -->
 							<a href="./images/album/ier/7.jpg"><img src="./images/album/ier/7-thumb.jpg"></a>
 							<a href="./images/album/ier/8.jpg"><img src="./images/album/ier/8-thumb.jpg"></a>
 							<a href="./images/album/ier/9.jpg"><img src="./images/album/ier/9-thumb.jpg"></a>
 							<a href="./images/album/ier/10.jpg"><img src="./images/album/ier/10-thumb.jpg"></a>
 							<a href="./images/album/ier/11.jpg"><img src="./images/album/ier/11-thumb.jpg"></a>
 							<a href="./images/album/ier/12.jpg"><img src="./images/album/ier/12-thumb.jpg"></a>
-							<a href="./images/album/ier/13.jpg"><img src="./images/album/ier/13-thumb.jpg"></a>
+							<!-- <a href="./images/album/ier/13.jpg"><img src="./images/album/ier/13-thumb.jpg"></a>
 							<a href="./images/album/ier/14.jpg"><img src="./images/album/ier/14-thumb.jpg"></a>
-							<a href="./images/album/ier/15.jpg"><img src="./images/album/ier/15-thumb.jpg"></a>
+							<a href="./images/album/ier/15.jpg"><img src="./images/album/ier/15-thumb.jpg"></a> -->
 							<a href="./images/album/ier/16.jpg"><img src="./images/album/ier/16-thumb.jpg"></a>
 						</div>
 					</section>
