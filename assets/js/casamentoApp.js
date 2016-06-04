@@ -1,4 +1,4 @@
-var App = angular.module('casamentoApp', ['ngResource', 'autocomplete', 'ngScrollbars']);
+var App = angular.module('casamentoApp', ['ngResource', 'autocomplete', 'ngScrollbars', 'angularMask']);
 
 App.controller('confirmacaoCtrl', function($scope, $resource){
 
@@ -16,6 +16,8 @@ App.controller('confirmacaoCtrl', function($scope, $resource){
   $scope.mostrarFormConfirmacao = false;
   $scope.mostrarMensagem = false;
   $scope.mensagem = '';
+  $scope.emailVazio = false;
+  $scope.telefoneVazio = false;
 
   $scope.iniciar = function(){
     Convidado.query(function(convs){
@@ -34,6 +36,8 @@ App.controller('confirmacaoCtrl', function($scope, $resource){
     $scope.respostaEnviada = undefined;
     $scope.mostrarFormConfirmacao = false;
     $scope.mostrarMensagem = false;
+    $scope.emailVazio = false;
+    $scope.telefoneVazio = false;
 
     var query = {nome : nome};
 
@@ -58,18 +62,40 @@ App.controller('confirmacaoCtrl', function($scope, $resource){
 
   $scope.confirmarPresenca = function($event, convidado, confirma){
     $event.preventDefault();
-    Convidado.update({
-      _id: convidado._id,
-      email: convidado.email,
-      telefone: convidado.telefone, 
-      confirmado: confirma
-    });
-    convidado.confirmado = confirma;
-    $scope.mostrarFormConfirmacao = false;
-    $scope.mostrarMensagem = true;
-    $scope.mensagem = 'Resposta enviada com sucesso!';
-    $scope.nome = '';
+
+    var podeSalvar = validarConfirmacao(convidado)
+
+    if(podeSalvar){
+      Convidado.update({
+        _id: convidado._id,
+        email: convidado.email,
+        telefone: convidado.telefone,
+        confirmado: confirma
+      });
+      convidado.confirmado = confirma;
+      $scope.mostrarFormConfirmacao = false;
+      $scope.mostrarMensagem = true;
+      $scope.mensagem = 'Resposta enviada com sucesso!';
+      $scope.nome = '';
+    }
   };
+
+  function validarConfirmacao(convidado){
+
+    $scope.emailVazio = false;
+    $scope.telefoneVazio = false;
+
+    var podeSalvar = true;
+    if(!convidado.email || convidado.email === ''){
+      $scope.emailVazio = true;
+      podeSalvar = false;
+    }
+    if(!convidado.telefone || convidado.telefone === ''){
+      $scope.telefoneVazio = true;
+      podeSalvar = false;
+    }
+    return podeSalvar;
+  }
 
   $scope.mostrarStatus = function(convidado){
     if(convidado.confirmado != undefined){

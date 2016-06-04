@@ -224,7 +224,7 @@
 								<h2>Confirmar Presença</h2>
 								<p>Sua presença é muito importante para nós!</p>
 							</header>
-							<div class="row uniform" style="padding-top:5%;">
+							<div class="row uniform">
 								<div class="8u 12u$(small)">
 									<autocomplete ng-model="nome" data="nomes" on-type="updateMovies" ng-hide="mostrarFormConfirmacao"></autocomplete>
 								</div>
@@ -274,15 +274,17 @@
 											</tfoot>
 									</table>
 								</div>
-								<div class="row uniform" ng-show="mostrarFormConfirmacao">
+								<div class="row uniform" style="width:100%" ng-show="mostrarFormConfirmacao">
 									<div class="8u 12u$(small)">
 										<input type="text" id="confirmacao-nome" value="" ng-model="convidado.nome" placeholder="Nome" disabled="true"/>
 									</div>
 									<div class="6u$ 12u$(xsmall)">
-										<input type="email" id="confirmacao-email" value="" ng-model="convidado.email" placeholder="Email" />
+										<input type="email" id="confirmacao-email" value="" ng-model="convidado.email" placeholder="E-mail" />
+										<span ng-show="emailVazio">Insira o E-mail</span>
 									</div>
 									<div class="6u 12u$(xsmall)">
-										<input type="text" id="confirmacao-telefone" value="" ng-model="convidado.telefone" placeholder="Telefone" />
+										<input type="text" id="confirmacao-telefone" value="" ng-model="convidado.telefone" placeholder="Telefone" angular-mask="(00)00000-0000|(00)0000-0000"/>
+										<span ng-show="telefoneVazio">Insira o Telefone</span>
 									</div>
 									<div class="12u 12u$(xsmall)">
 										<a href="#" class=" button special small" ng-click="confirmarPresenca($event, convidado, true);">Confirmar</a>
@@ -718,6 +720,7 @@
 			<script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
 			<script src="assets/js/scrollbars.min.js"></script>
 			<script src="assets/js/autocomplete.js"></script>
+			<script src="assets/js/angular-simple-mask.js"></script>
 			<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script> -->
 			<script src="assets/js/casamentoApp.js"></script>
 
