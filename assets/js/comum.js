@@ -58,7 +58,7 @@ function contagemRegressiva(dt, id){
     var _day = _hour * 24;
     var timer;
 
-    function showRemaining() {
+    function remaining() {
         var now = new Date();
         var distance = end - now;
 
@@ -70,7 +70,9 @@ function contagemRegressiva(dt, id){
 
         if (distance < 0) {
             clearInterval(timer);
-            document.getElementById(id).innerHTML = 'O grande dia já aconteceu';
+            var elm = document.getElementById(id);
+            if(elm)
+              elm.innerHTML = 'O grande dia já aconteceu';
             return;
         }
 
@@ -79,13 +81,15 @@ function contagemRegressiva(dt, id){
         var minutes = Math.floor((distance % _hour) / _minute);
         var seconds = Math.floor((distance % _minute) / _second);
 
-        document.getElementById(id).innerHTML = 'Faltam ' + days + ' dias para o grande dia!';
+        var elm = document.getElementById(id);
+        if(elm)
+          elm.innerHTML = 'Faltam ' + days + ' dias para o grande dia!';
         // document.getElementById(id).innerHTML += hours + 'hrs ';
         // document.getElementById(id).innerHTML += minutes + 'mins ';
         // document.getElementById(id).innerHTML += seconds + 'secs';
     }
 
-    timer = setInterval(showRemaining, 1000);
+    timer = setInterval(remaining, 1000);
 }
 
 function initializeSwipe(){
