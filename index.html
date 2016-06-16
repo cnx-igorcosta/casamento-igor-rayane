@@ -37,17 +37,15 @@
 			}
 		</script>
 
-
-
-
 		<!-- Page Wrapper -->
 		<div id="page-wrapper" class="slide slide1">
 			<input type="hidden" id="nextSlide" value="">
 			<input type="hidden" id="nextContainer" value="">
+
 				<!-- Header -->
 					<header id="header" class="alt">
 						<!--<h1><a href="index.html">Igor &amp; Rayane</a></h1>-->
-						<h1><a href="index.html">Igor &amp; Rayane</a></h1>
+						<h1><a href="#banner" class="scrolly">Igor &amp; Rayane</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -212,7 +210,7 @@
 										<div class="4u 12u$(small)">
 											<ul class="actions fit">
 												<li>
-													<a href="#" id="tracarRota" name="tracarRota" onclick="javascript:function(){return false}" class="button special fit icon fa-map-marker">Traçar Rota</a></li>
+													<a href="#" id="tracarRota" name="tracarRota" class="button special fit icon fa-map-marker">Traçar Rota</a></li>
 												</li>
 											</ul>
 										</div>
@@ -235,7 +233,7 @@
 								<div class="4u 12u$(small)">
 									<ul class="actions fit">
 										<li>
-											<a href="#" id="confirmacao-buscar" name="confirmacao-buscar"
+											<a id="confirmacao-buscar" name="confirmacao-buscar"
 												class="button special fit" ng-click="buscarConvidado(nome, $event);" ng-hide="mostrarFormConfirmacao">
 													<i ng-show="isLoading" class="fa fa-spinner fa-pulse"></i>
 													<i ng-show="!isLoading" class="fa fa-search"></i> Buscar
@@ -257,7 +255,7 @@
 											<tr ng-repeat="convidado in convidados">
 												<td>{{convidado.nome}}</td>
 												<td style="text-align: right;" ng-show="!mostrarStatus(convidados[$index]);">
-													<a href="#" class="button special small" ng-click="responder($event, convidados[$index]);">Responder</a>
+													<a class="button special small" ng-click="responder($event, convidados[$index]);">Responder</a>
 												</td>
 												<td style="text-align: left;" ng-show="mostrarStatus(convidados[$index]);">
 													Resposta enviada
@@ -269,7 +267,7 @@
 														<div class="12u 12u$(small)">
 															<ul class="actions fit">
 																<li>
-																	<a href="#" class=" button small" ng-click="cancelar($event);">Limpar</a>
+																	<a class=" button small" ng-click="cancelar($event);">Limpar</a>
 																</li>
 															</ul>
 														</div>
@@ -291,9 +289,9 @@
 										<span ng-show="telefoneVazio">Insira o Telefone</span>
 									</div>
 									<div class="12u 12u$(xsmall)">
-										<a href="#" class=" button special small" ng-click="confirmarPresenca($event, convidado, true);">Confirmar</a>
-										<a href="#" class=" button special small" ng-click="confirmarPresenca($event, convidado, false);">Não poderei ir</a>
-										<a href="#" class=" button small" ng-click="cancelar($event);">Limpar</a>
+										<a class=" button special small" ng-click="confirmarPresenca($event, convidado, true);">Confirmar</a>
+										<a class=" button special small" ng-click="confirmarPresenca($event, convidado, false);">Não poderei ir</a>
+										<a class=" button small" ng-click="cancelar($event);">Limpar</a>
 									</div>
 								</div>
 							</div>
@@ -318,7 +316,7 @@
 							</div> -->
 						</header>
 						<div class="12u 12u$(small)">
-							<a href="#horizon-familia" id="familia" class="horizon-link active scrolly">Família</a>
+							<a href="#familia" id="familia" class="horizon-link active scrolly">Família</a>
 						</div><br><br>
 						<div id="horizon-familia" class="horizon-swiper">
 							<div class="horizon-item">
@@ -345,7 +343,7 @@
 						<br><br>
 						<div>
 							<div class="12u 12u$(small)">
-								<a href="#horizon-padrinhos" id="padrinhos" class="horizon-link active scrolly">Padrinhos</a>
+								<a href="#padrinhos" id="padrinhos" class="horizon-link active scrolly">Padrinhos</a>
 							</div>
 							<br><br>
 							<div id="horizon-padrinhos" class="horizon-swiper">
@@ -454,7 +452,7 @@
 					</div>
 					<br><br>
 					<div class="12u$ 12u$(small)">
-						<a href="#horizon-daminhas" id="daminhas" class="horizon-link active scrolly">Daminhas e Pajem</a>
+						<a href="#daminhas" id="daminhas" class="horizon-link active scrolly">Daminhas e Pajem</a>
 					</div>
 					<br><br>
 					<div id="horizon-daminhas">
@@ -508,7 +506,7 @@
 								<h2>Mural de Mensagens</h2>
 								<p ng-show="camposObrigatorios">Digite nome e mensagem para enviar.</p>
 								<p>
-									<a href="#" id="escrever-btn" class="button special small" ng-click="showMural($event);" ng-hide="showFormMural">Escrever Mensagem</a>
+									<a id="escrever-btn" class="button special small" ng-click="showMural($event);" ng-hide="showFormMural">Escrever Mensagem</a>
 								</p>
 								<div id="escrever-mural" class="row uniform" ng-show="showFormMural">
 									<div class="4u 12u$(small)">
@@ -518,12 +516,12 @@
 										<textarea name="mensagem-mural" id="mensagem-mural" ng-model="mensagem.texto" placeholder="Digite sua mensagem" rows="3"></textarea>
 									</div>
 									<div class="12u$ 12u$(small)">
-										<a href="#" id="enviar-mensagem" name="enviar-mensagem" ng-click="salvarMensagem($event, mensagem);" class="button special">
+										<a id="enviar-mensagem" name="enviar-mensagem" ng-click="salvarMensagem($event, mensagem);" class="button special">
 											<i ng-show="isLoading" class="fa fa-spinner fa-pulse"></i>
 											<i ng-show="!isLoading" class="fa fa-commenting"></i>
 											Enviar
 										</a>
-										<a href="#" id="cancelar-mensagem" name="cancelar-mensagem" ng-click="cancelarMensagem($event);" class="button small">Cancelar</a>
+										<a id="cancelar-mensagem" name="cancelar-mensagem" ng-click="cancelarMensagem($event);" class="button small">Cancelar</a>
 									</div>
 								</div>
 							</header>
@@ -779,7 +777,8 @@
 
 			<!-- SCM Music Player http://scmplayer.net -->
 			<script type="text/javascript" src="http://scmplayer.net/script.js"
-			data-config="{'skin':'http://static.tumblr.com/mky4cgu/Jz2mbhpgw/simplescinzafalsa-moral.css','volume':20,'autoplay':true,'shuffle':false,'repeat':1,'placement':'bottom','showplaylist':false,'playlist':[{'title':'Sugar - Maroon 5 ','url':'https://www.youtube.com/watch?v=7vw84EkHOlY'},{'title':'Run, Run, Run - Kelly Clarkson ','url':'https://youtu.be/prmHLN1OgtI'},{'title':'Lay Me Down - by Sam Smith','url':'https://youtu.be/HaMq2nn5ac0'},{'title':'Love You Like That - Canaan Smith','url':'https://www.youtube.com/watch?v=VMmc1cR_zLA'}]}" ></script>
+			data-config="{'skin':'http://static.tumblr.com/jwavkzt/IjDmxk2xo/skin.css','volume':10,'autoplay':true,'shuffle':false,'repeat':1,'placement':'bottom','showplaylist':false,'playlist':[{'title':'Sugar - Maroon 5','url':'https://googledrive.com/host/0B0pFoZLgUsY9VWdGZHU2dktCYkk/maroon-5-sugar.mp3'},{'title':'Marry Me - Jason Derulo','url':'https://googledrive.com/host/0B0pFoZLgUsY9VWdGZHU2dktCYkk/MarryMe-JasonDerulo.mp3'},{'title':'All Of Me - John Legend','url':'https://googledrive.com/host/0B0pFoZLgUsY9VWdGZHU2dktCYkk/AllOfMe-JohnLegend.mp3'},{'title':'Just The Way You Are - Bruno Mars','url':'https://googledrive.com/host/0B0pFoZLgUsY9VWdGZHU2dktCYkk/BrunoMars-JustTheWayYouAre.mp3'}]}" ></script>
 			<!-- SCM Music Player script end -->
+
 	</body>
 </html>
