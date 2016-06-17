@@ -39,18 +39,23 @@ App.controller('confirmacaoCtrl', function($scope, $resource){
     $scope.emailVazio = false;
     $scope.telefoneVazio = false;
 
-    var query = {nome : nome};
+    if(nome){
+      var query = {nome : nome};
 
-    var Convi = $resource('/api/convidados/:nome', {nome:'@nome'},{
-      'get' : { method: 'GET', isArray:true}
-    });
-    Convi.get({nome:nome}, function(convs) {
-      for(var i=0; i<convs.length; i++){
-        $scope.convidados.push(convs[i]);
-      }
-      $scope.mostrarTabela = true;
+      var Convi = $resource('/api/convidados/:nome', {nome:'@nome'},{
+        'get' : { method: 'GET', isArray:true}
+      });
+      Convi.get({nome:nome}, function(convs) {
+        for(var i=0; i<convs.length; i++){
+          $scope.convidados.push(convs[i]);
+        }
+        $scope.mostrarTabela = true;
+        $scope.isLoading = false;
+      });
+    }else{
       $scope.isLoading = false;
-    });
+    }
+
   };
 
   $scope.responder = function($event, convidado){
