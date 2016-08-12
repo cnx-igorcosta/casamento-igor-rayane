@@ -36,8 +36,8 @@
   font-family: 'Playball';
   padding: 10px;
   font-size: 2em;
-  color: #ccc6b8;
-  border-bottom: 1px solid #ccc6b8;
+  /*color: #ccc6b8;*/
+  border-bottom: 1px solid #FFF;
   font-weight: normal;
   letter-spacing: 0em;
   text-transform: capitalize;
