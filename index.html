@@ -55,8 +55,8 @@
 											<li><a href="#banner" class="scrolly">Início</a></li>
 											<li><a href="#nossaHistoria" class="scrolly">Nossa História</a></li>
 											<li><a href="#evento" class="scrolly">O Evento</a></li>
-											<li><a href="#confirmarPresenca" class="scrolly">Confirmar Presença</a></li>
 											<li><a href="#nossoLado" class="scrolly">Ao Nosso Lado</a></li>
+											<li><a href="#confirmarPresenca" class="scrolly">Confirmar Presença</a></li>
 											<li><a href="#listaPresentes" class="scrolly">Lista de Presentes</a></li>
 											<li><a href="#mural" class="scrolly">Mural de Mensagens</a></li>
 											<li><a href="#albuns" class="scrolly">Álbuns</a></li>
@@ -100,7 +100,7 @@
 						</div>
 					</section>
 
-					<section id="nossaHistoria" class="wrapper style3 special">
+					<section id="nossaHistoria" class="wrapper style2 special">
 						<div class="inner">
 							<header class="major">
 								<h2>Nossa História</h2>
@@ -158,7 +158,7 @@
 					</section>
 
 				<!-- Two -->
-					<section id="nossaHistoria" class="wrapper alt style3	">
+					<section id="nossaHistoria" class="wrapper alt style2	">
 						<section class="spotlight wow slideInRight">
 							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
 								<h2>Começamos a namorar em 2007</h2>
@@ -180,13 +180,13 @@
 						<section class="spotlight wow slideInLeft">
 							<div class="image"><img src="images/pic5.jpg" alt="" /></div><div class="content">
 								<h2>A Proposta</h2>
-								<p>Em 2014, Igor decidiu fazer uma surpresa e pediu Rayane em casamento, no dia do seu aniversário. Entre flores e a promessa de amor eterno, ela disse Sim. E então começamos a planejar o grande dia.</p>
+								<p>Em 2014, Igor decidiu fazer uma surpresa no dia do seu aniversário e pediu Rayane em casamento. Entre flores e a promessa de amor eterno, ela disse Sim. E então começamos a planejar o grande dia.</p>
 							</div>
 						</section>
 					</section>
 
 					<!-- O EVENTO-->
-					<section id="evento" class="wrapper style6 special">
+					<section id="evento" class="wrapper style1 special">
 						<div class="inner">
 							<header class="major">
 								<h2>O Evento</h2>
@@ -219,87 +219,8 @@
 						</div>
 					</section>
 
-				<!-- CONFIRMAR PRESENÇA -->
-					<section id="confirmarPresenca" class="wrapper style2 special">
-						<div class="inner" ng-controller="confirmacaoCtrl">
-							<header class="major">
-								<h2>Confirmar Presença</h2>
-								<p>Sua presença é muito importante para nós!</p>
-							</header>
-							<div class="row uniform">
-								<div class="8u 12u$(small)">
-									<autocomplete ng-model="nome" data="nomes" on-type="updateMovies" ng-hide="mostrarFormConfirmacao"></autocomplete>
-								</div>
-								<div class="4u 12u$(small)">
-									<ul class="actions fit">
-										<li>
-											<a id="confirmacao-buscar" name="confirmacao-buscar"
-												class="button special fit" ng-click="buscarConvidado(nome, $event);" ng-hide="mostrarFormConfirmacao">
-													<i ng-show="isLoading" class="fa fa-spinner fa-pulse"></i>
-													<i ng-show="!isLoading" class="fa fa-search"></i> Buscar
-											</a>
-										</li>
-									</ul>
-								</div>
-								<p ng-show="mostrarMensagem">{{mensagem}}</p>
-								<p ng-show="naoEncontrado" class="12u 12u$(small)">Não encontrado</p>
-								<div ng-show="mostrarTabela" class="table-wrapper">
-									<table>
-										<thead>
-											<tr>
-												<th>Nome</th>
-												<th colspan="2"><span ng-show="respostaEnviada">Status</span></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr ng-repeat="convidado in convidados">
-												<td>{{convidado.nome}}</td>
-												<td style="text-align: right;" ng-show="!mostrarStatus(convidados[$index]);">
-													<a class="button special small" ng-click="responder($event, convidados[$index]);">Responder</a>
-												</td>
-												<td style="text-align: left;" ng-show="mostrarStatus(convidados[$index]);">
-													Resposta enviada
-												</td>
-											</tr>
-											<tfoot>
-												<tr>
-													<td colspan="3">
-														<div class="12u 12u$(small)">
-															<ul class="actions fit">
-																<li>
-																	<a class=" button small" ng-click="cancelar($event);">Limpar</a>
-																</li>
-															</ul>
-														</div>
-													</td>
-												</tr>
-											</tfoot>
-									</table>
-								</div>
-								<div class="row uniform" style="width:100%" ng-show="mostrarFormConfirmacao">
-									<div class="8u 12u$(small)">
-										<input type="text" id="confirmacao-nome" value="" ng-model="convidado.nome" placeholder="Nome" disabled="true"/>
-									</div>
-									<div class="6u$ 12u$(xsmall)">
-										<input type="email" id="confirmacao-email" value="" ng-model="convidado.email" placeholder="E-mail" />
-										<span ng-show="emailVazio">Insira o E-mail</span>
-									</div>
-									<div class="6u 12u$(xsmall)">
-										<input type="text" id="confirmacao-telefone" value="" ng-model="convidado.telefone" placeholder="Telefone" angular-mask="(00)00000-0000|(00)0000-0000"/>
-										<span ng-show="telefoneVazio">Insira o Telefone</span>
-									</div>
-									<div class="12u 12u$(xsmall)">
-										<a class=" button special small" ng-click="confirmarPresenca($event, convidado, true);">Confirmar</a>
-										<a class=" button special small" ng-click="confirmarPresenca($event, convidado, false);">Não poderei ir</a>
-										<a class=" button small" ng-click="cancelar($event);">Limpar</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-
-					<!-- AO NOSSO LADO -->
-				<section id="nossoLado" class="wrapper style1 special">
+				<!-- AO NOSSO LADO -->
+				<section id="nossoLado" class="wrapper style3 special">
 					<div class="inner">
 						<header class="major">
 							<h2>Ao Nosso Lado</h2>
@@ -479,8 +400,87 @@
 			</div>
 			</section>
 
+			<!-- CONFIRMAR PRESENÇA -->
+				<section id="confirmarPresenca" class="wrapper style1 special">
+					<div class="inner" ng-controller="confirmacaoCtrl">
+						<header class="major">
+							<h2>Confirmar Presença</h2>
+							<p>Sua presença é muito importante para nós!</p>
+						</header>
+						<div class="row uniform">
+							<div class="8u 12u$(small)">
+								<autocomplete ng-model="nome" data="nomes" on-type="updateMovies" ng-hide="mostrarFormConfirmacao"></autocomplete>
+							</div>
+							<div class="4u 12u$(small)">
+								<ul class="actions fit">
+									<li>
+										<a id="confirmacao-buscar" name="confirmacao-buscar"
+											class="button special fit" ng-click="buscarConvidado(nome, $event);" ng-hide="mostrarFormConfirmacao">
+												<i ng-show="isLoading" class="fa fa-spinner fa-pulse"></i>
+												<i ng-show="!isLoading" class="fa fa-search"></i> Buscar
+										</a>
+									</li>
+								</ul>
+							</div>
+							<p ng-show="mostrarMensagem">{{mensagem}}</p>
+							<p ng-show="naoEncontrado" class="12u 12u$(small)">Não encontrado</p>
+							<div ng-show="mostrarTabela" class="table-wrapper">
+								<table>
+									<thead>
+										<tr>
+											<th>Nome</th>
+											<th colspan="2"><span ng-show="respostaEnviada">Status</span></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="convidado in convidados">
+											<td>{{convidado.nome}}</td>
+											<td style="text-align: right;" ng-show="!mostrarStatus(convidados[$index]);">
+												<a class="button special small" ng-click="responder($event, convidados[$index]);">Responder</a>
+											</td>
+											<td style="text-align: left;" ng-show="mostrarStatus(convidados[$index]);">
+												Resposta enviada
+											</td>
+										</tr>
+										<tfoot>
+											<tr>
+												<td colspan="3">
+													<div class="12u 12u$(small)">
+														<ul class="actions fit">
+															<li>
+																<a class=" button small" ng-click="cancelar($event);">Limpar</a>
+															</li>
+														</ul>
+													</div>
+												</td>
+											</tr>
+										</tfoot>
+								</table>
+							</div>
+							<div class="row uniform" style="width:100%" ng-show="mostrarFormConfirmacao">
+								<div class="8u 12u$(small)">
+									<input type="text" id="confirmacao-nome" value="" ng-model="convidado.nome" placeholder="Nome" disabled="true"/>
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input type="email" id="confirmacao-email" value="" ng-model="convidado.email" placeholder="E-mail" />
+									<span ng-show="emailVazio">Insira o E-mail</span>
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<input type="text" id="confirmacao-telefone" value="" ng-model="convidado.telefone" placeholder="Telefone" angular-mask="(00)00000-0000|(00)0000-0000"/>
+									<span ng-show="telefoneVazio">Insira o Telefone</span>
+								</div>
+								<div class="12u 12u$(xsmall)">
+									<a class=" button special small" ng-click="confirmarPresenca($event, convidado, true);">Confirmar</a>
+									<a class=" button special small" ng-click="confirmarPresenca($event, convidado, false);">Não poderei ir</a>
+									<a class=" button small" ng-click="cancelar($event);">Limpar</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
 				<!-- LISTA DE PRESENTES -->
-					<section id="listaPresentes" class="wrapper style3 special">
+					<section id="listaPresentes" class="wrapper style6 special">
 						<div class="inner">
 							<header class="major">
 								<h2>Lista de Presentes</h2>
@@ -500,7 +500,7 @@
 					</section>
 
 					<!-- MURAL -->
-					<section id="mural" class="wrapper style6 special">
+					<section id="mural" class="wrapper style1 special">
 						<div class="inner" ng-controller="muralCtrl">
 							<header class="major">
 								<h2>Mural de Mensagens</h2>

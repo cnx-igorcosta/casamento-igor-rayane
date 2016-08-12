@@ -137,7 +137,7 @@ App.controller('muralCtrl', function($scope, $resource){
 
   $scope.config = {
     autoHideScrollbar: false,
-    theme: 'light',
+    theme: 'dark',
     advanced:{
         updateOnContentResize: true
     },
