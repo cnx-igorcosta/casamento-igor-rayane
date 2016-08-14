@@ -192,10 +192,10 @@
 								<h2>O Evento</h2>
 								<ul class="features">
 									<li>
-										<h3 class="cerimonia-festa">Cerimônia e Festa</h3>
+										<h3 class="cerimonia-festa wow flipInX" >Cerimônia e Festa</h3>
 										<p></p>
-										<p><span class="quando-local">Quando </span><span class="icon fa-arrow-right"></span> Domingo, 25 de junho de 2017, às 18:30h</p>
-										<p><span class="quando-local">Local </span><span class="icon fa-arrow-right"></span> Espaço Golden Palace - Estrada Intendente Magalhães 1064, Vila Valqueire</p>
+										<p class="wow flipInX"><span class="quando-local">Quando </span><span class="icon fa-arrow-right"></span> Domingo, 25 de junho de 2017, às 18:30h</p>
+										<p class="wow flipInX"><span class="quando-local">Local </span><span class="icon fa-arrow-right"></span> Espaço Golden Palace - Estrada Intendente Magalhães 1064, Vila Valqueire</p>
 									</li>
 								</ul>
 							<div id="map" class="12u$" style="width: 100%; height:350px; position: relative; overflow: hidden; transform: translateZ(0px); padding: 0; margin-top: 10px;">
@@ -239,7 +239,7 @@
 						<div class="12u 12u$(small)">
 							<a href="#familia" id="familia" class="horizon-link active scrolly">Família</a>
 						</div><br><br>
-						<div id="horizon-familia" class="horizon-swiper">
+						<div id="horizon-familia" class="horizon-swiper wow slideInUp">
 							<div class="horizon-item">
 								<div class="horizon-left">
 									<img src="./images/nossolado/ronaldo.jpg">
@@ -280,12 +280,12 @@
 								</div>
 								<div class="horizon-item">
 									<div class="horizon-left">
-										<img src="./images/nossolado/roberto.jpg">
-										<p>Roberto</p>
+										<img src="./images/nossolado/padrinho1.gif">
+										<p>A definir</p>
 									</div>
 									<div class="horizon-right">
-										<img src="./images/nossolado/carolina.jpg">
-										<p>Carolina</p>
+										<img src="./images/nossolado/madrinha1.gif">
+										<p>A definir</p>
 									</div>
 								</div>
 							  <div class="horizon-item">
@@ -379,14 +379,14 @@
 					<div id="horizon-daminhas">
 						<div class="horizon-item">
 							<div class="horizon-left horizon-right">
-								<img src="./images/nossolado/nicole.jpg">
-								<p>Nicole</p>
+								<img src="./images/nossolado/daminha1.gif">
+								<p>A definir</p>
 							</div>
 						</div>
 						<div class="horizon-item">
 							<div class="horizon-left horizon-right">
-								<img src="./images/nossolado/andre.jpg">
-								<p>Marcos André</p>
+								<img src="./images/nossolado/pagem.gif">
+								<p>A definir</p>
 							</div>
 						</div>
 						<div class="horizon-item">
@@ -503,10 +503,10 @@
 					<section id="mural" class="wrapper style1 special">
 						<div class="inner" ng-controller="muralCtrl">
 							<header class="major">
-								<h2>Mural de Mensagens</h2>
+								<h2 id="tituloMural">Mural de Mensagens</h2>
 								<p ng-show="camposObrigatorios">Digite nome e mensagem para enviar.</p>
 								<p>
-									<a id="escrever-btn" class="button special small" ng-click="showMural($event);" ng-hide="showFormMural">Escrever Mensagem</a>
+									<a id="escrever-btn" href="#tituloMural" class="button special small scrolly" ng-click="showMural($event);" ng-hide="showFormMural">Escrever Mensagem</a>
 								</p>
 								<div id="escrever-mural" class="row uniform" ng-show="showFormMural">
 									<div class="4u 12u$(small)">
@@ -516,7 +516,7 @@
 										<textarea name="mensagem-mural" id="mensagem-mural" ng-model="mensagem.texto" placeholder="Digite sua mensagem" rows="3"></textarea>
 									</div>
 									<div class="12u$ 12u$(small)">
-										<a id="enviar-mensagem" name="enviar-mensagem" ng-click="salvarMensagem($event, mensagem);" class="button special">
+										<a id="enviar-mensagem" name="enviar-mensagem" ng-click="salvarMensagem($event, mensagem);" class="button special" >
 											<i ng-show="isLoading" class="fa fa-spinner fa-pulse"></i>
 											<i ng-show="!isLoading" class="fa fa-commenting"></i>
 											Enviar
@@ -590,6 +590,9 @@
 							<a href="https://googledrive.com/host/0B0pFoZLgUsY9czdDQVMtWEk3S3c/8.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9czdDQVMtWEk3S3c/8-thumb.jpg"></a>
 							<a href="https://googledrive.com/host/0B0pFoZLgUsY9czdDQVMtWEk3S3c/9.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9czdDQVMtWEk3S3c/9-thumb.jpg"></a>
 							<a href="https://googledrive.com/host/0B0pFoZLgUsY9czdDQVMtWEk3S3c/10.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9czdDQVMtWEk3S3c/10-thumb.jpg"></a>
+							<a href="https://googledrive.com/host/0B0pFoZLgUsY9czdDQVMtWEk3S3c/11.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9czdDQVMtWEk3S3c/11-thumb.jpg"></a>
+							<a href="https://googledrive.com/host/0B0pFoZLgUsY9czdDQVMtWEk3S3c/12.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9czdDQVMtWEk3S3c/12-thumb.jpg"></a>
+							<a href="https://googledrive.com/host/0B0pFoZLgUsY9czdDQVMtWEk3S3c/13.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9czdDQVMtWEk3S3c/13-thumb.jpg"></a>
 							<!-- <a href="./images/album/amigos/1.jpg"><img src="./images/album/amigos/1-thumb.jpg"></a>
 							<a href="./images/album/amigos/2.jpg"><img src="./images/album/amigos/2-thumb.jpg"></a>
 							<a href="./images/album/amigos/3.jpg"><img src="./images/album/amigos/3-thumb.jpg"></a>
@@ -616,6 +619,9 @@
 							<a href="https://googledrive.com/host/0B0pFoZLgUsY9VGRYakdLdXVnUm8/11.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9VGRYakdLdXVnUm8/11-thumb.jpg"></a>
 							<a href="https://googledrive.com/host/0B0pFoZLgUsY9VGRYakdLdXVnUm8/12.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9VGRYakdLdXVnUm8/12-thumb.jpg"></a>
 							<a href="https://googledrive.com/host/0B0pFoZLgUsY9VGRYakdLdXVnUm8/13.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9VGRYakdLdXVnUm8/13-thumb.jpg"></a>
+							<a href="https://googledrive.com/host/0B0pFoZLgUsY9VGRYakdLdXVnUm8/14.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9VGRYakdLdXVnUm8/14-thumb.jpg"></a>
+							<a href="https://googledrive.com/host/0B0pFoZLgUsY9VGRYakdLdXVnUm8/15.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9VGRYakdLdXVnUm8/15-thumb.jpg"></a>
+							<a href="https://googledrive.com/host/0B0pFoZLgUsY9VGRYakdLdXVnUm8/16.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9VGRYakdLdXVnUm8/16-thumb.jpg"></a>
 							<!-- <a href="./images/album/familia/1.jpg"><img src="./images/album/familia/1-thumb.jpg"></a>
 							<a href="./images/album/familia/2.jpg"><img src="./images/album/familia/2-thumb.jpg"></a>
 							<a href="./images/album/familia/3.jpg"><img src="./images/album/familia/3-thumb.jpg"></a>
@@ -658,6 +664,9 @@
 							<a href="https://googledrive.com/host/0B0pFoZLgUsY9ZFZfZ3k1dGlOTkE/24.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9ZFZfZ3k1dGlOTkE/24-thumb.jpg"></a>
 							<a href="https://googledrive.com/host/0B0pFoZLgUsY9ZFZfZ3k1dGlOTkE/25.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9ZFZfZ3k1dGlOTkE/25-thumb.jpg"></a>
 							<a href="https://googledrive.com/host/0B0pFoZLgUsY9ZFZfZ3k1dGlOTkE/26.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9ZFZfZ3k1dGlOTkE/26-thumb.jpg"></a>
+							<a href="https://googledrive.com/host/0B0pFoZLgUsY9ZFZfZ3k1dGlOTkE/27.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9ZFZfZ3k1dGlOTkE/27-thumb.jpg"></a>
+							<a href="https://googledrive.com/host/0B0pFoZLgUsY9ZFZfZ3k1dGlOTkE/28.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9ZFZfZ3k1dGlOTkE/28-thumb.jpg"></a>
+							<a href="https://googledrive.com/host/0B0pFoZLgUsY9ZFZfZ3k1dGlOTkE/29.jpg"><img src="https://googledrive.com/host/0B0pFoZLgUsY9ZFZfZ3k1dGlOTkE/29-thumb.jpg"></a>
 							<!-- <a href="./images/album/ier/1.jpg"><img src="./images/album/ier/1-thumb.jpg"></a>
 							<a href="./images/album/ier/2.jpg"><img src="./images/album/ier/2-thumb.jpg"></a>
 							<a href="./images/album/ier/3.jpg"><img src="./images/album/ier/3-thumb.jpg"></a>

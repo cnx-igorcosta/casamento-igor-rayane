@@ -368,9 +368,13 @@
 }
 
 #listaPresentes .features li:before{
-  color: #FFF;
+  color: #b39c68;
 }
 
 #listaPresentes  li p{
   color: #FFFFF0;
+}
+
+.horizon-next, .horizon-prev{
+    box-shadow: inset 0 0 0 0px;
 }
