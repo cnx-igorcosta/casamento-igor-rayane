@@ -54,4 +54,27 @@ App.controller('convidadosCtrl', function($scope, $resource){
     $scope.convidados.splice(index, 1);
   };
 
+  $scope.buscarConfirmados = function($event, confirmado){
+    $event.preventDefault();
+    $scope.convidados = [];
+    Convidado.query(function(convs){
+      for(var i=0; i<convs.length; i++){
+        console.log(confirmado && convs[i].confirmado === true);
+        if(convs[i].confirmado === confirmado){
+          $scope.convidados.push(convs[i]);
+        }
+      }
+      // $scope.convidados = convs;
+      $scope.mostrarTabela = true;
+    });
+  };
+
+  $scope.buscarTodos = function($event, confirmado){
+    $event.preventDefault();
+    Convidado.query(function(convs){
+      $scope.convidados = convs;
+      $scope.mostrarTabela = true;
+    });
+  };
+
 });

@@ -26,13 +26,13 @@ module.exports = function(router){
 
     //GET
     .get(function(req, res){
-      var query = {};
-      Convidado.find({}, function(err, convidados) {
-        if (err)
-          console.log(err);
-        else{
-          res.send(JSON.stringify(convidados));
-        }
+      Convidado.find({}).sort([['nome', 'ascending']])
+        .exec(function (err, convidados) {
+          if (err)
+            console.log(err);
+          else{
+            res.send(JSON.stringify(convidados));
+          }
       });
     })
 

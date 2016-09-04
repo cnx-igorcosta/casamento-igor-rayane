@@ -63,6 +63,37 @@
 										</li>
 									</ul>
 								</div>
+								<div class="12u 12u$(small)">
+									<ul class="actions fit">
+										<li>
+											BUSCAR:
+										</li>
+										<li>
+											<a href="#" id="confirmados" name="confirmados"
+												class="button special fit" ng-click="buscarConfirmados($event, true);">
+													Vai
+											</a>
+										</li>
+										<li>
+											<a href="#" id="nao-confirmados" name="nao-confirmados"
+												class="button special fit" ng-click="buscarConfirmados($event, false);">
+													Não Vai
+											</a>
+										</li>
+										<li>
+											<a href="#" id="nao-confirmados" name="nao-confirmados"
+												class="button special fit" ng-click="buscarConfirmados($event, undefined);">
+													Falta Responder
+											</a>
+										</li>
+										<li>
+											<a href="#" id="todos" name="todos"
+												class="button special fit" ng-click="buscarTodos($event);">
+													Todos
+											</a>
+										</li>
+									</ul>
+								</div>
 								<p ng-show="naoEncontrado" class="12u 12u$(small)">Não encontrado</p>
 								<div ng-show="mostrarTabela" class="table-wrapper">
 									<table>
