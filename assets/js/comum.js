@@ -17,7 +17,7 @@ $(document).ready(function(){
   });
   $('#para-lar').click(function(e){
     e.preventDefault();
-    window.open('http://www.pontofrio.com.br/Site/ListaGerenciadaLandingPage.aspx?idListaCompra=482124');
+    window.open('https://listadecasamento.americanas.com.br/pages/GuestGiftListPage/bridalRegistryId/01-02-15306038/');
   });
   // if(!skel.vars.mobile){
   //   $('.nano').nanoScroller();
