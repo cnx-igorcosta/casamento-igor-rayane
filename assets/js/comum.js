@@ -13,7 +13,7 @@ $(document).ready(function(){
   //lista de casamento
   $('#cota-viagem').click(function(e){
     e.preventDefault();
-    window.open('http://www.cvc.com.br/travel/lista/comprar-cota.aspx?Evento=633759');
+    window.open('http://www.cvc.com.br/travel/lista/comprar-cota.aspx?Evento=713882');
   });
   $('#para-lar').click(function(e){
     e.preventDefault();
