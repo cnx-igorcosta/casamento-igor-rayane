@@ -13,6 +13,7 @@ connection.connect(uri);
 //STATIC SOURCES'mongodb://localhost/rpgmanager'
 app.use('/assets', express.static('assets'));
 app.use('/images', express.static('images'));
+app.use('/musics', express.static('musics'));
 var favicon = require('serve-favicon');
 app.use(favicon(__dirname + '/images/favicon.png'));
 
