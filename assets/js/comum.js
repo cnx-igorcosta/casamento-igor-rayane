@@ -1,3 +1,4 @@
+//COMPACTAR EM https://developers.google.com/closure/compiler/
 $(document).ready(function(){
   /*setTimeout(primeiraTroca,8000);*/
 
