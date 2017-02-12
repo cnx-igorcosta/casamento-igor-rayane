@@ -1,8 +1,11 @@
+//COMPACTAR EM https://developers.google.com/closure/compiler/
 $(document).ready(function(){
   /*setTimeout(primeiraTroca,8000);*/
 
   //contagem regressiva para data do evento
-  contagemRegressiva('06/25/2017 00:00 AM', 'contagem');
+  setTimeout(contagemRegressiva,3000);
+  //carrousel padrinhos
+  setTimeout(initializeSwipe,2000);
 
   //impede que ao clicar va para o topo da tela
   $('#tracarRota').click(function(e){
@@ -23,7 +26,7 @@ $(document).ready(function(){
   //   $('.nano').nanoScroller();
   // }
   //carrousel padrinhos
-  initializeSwipe();
+  //initializeSwipe();
 
   // new Photostack( document.getElementById( 'photostack-1' ), {
 	// 			callback : function( item ) {
@@ -49,8 +52,9 @@ $('a.instagram').click(function(e) {
 //   changeSwipe(event.target.id);
 // });
 
-function contagemRegressiva(dt, id){
-    var end = new Date(dt);
+function contagemRegressiva(){
+    var id = 'contagem';
+    var end = new Date('06/25/2017 00:00 AM');
 
     var _second = 1000;
     var _minute = _second * 60;
