@@ -27,6 +27,9 @@ app.get('/controle-convidados', function(req, res){
 app.get('/controle-mensagens', function(req, res){
     res.sendFile('./pages/mensagens.html', { root: __dirname  } );
 });
+app.get('/save-the-date', function(req, res){
+    res.sendFile('./pages/save-the-date.html', { root: __dirname  } );
+});
 
 defaultRoute(app);
 
