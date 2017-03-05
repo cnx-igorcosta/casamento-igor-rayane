@@ -182,10 +182,16 @@ function openIer(e){
   fechaTodos();
   $('#album-ier').fadeIn();
 }
+function openPrewedding(e){
+  e.preventDefault();
+  fechaTodos();
+  $('#album-prewedding').fadeIn();
+}
 function fechaTodos(){
   $('#album-amigos').hide();
   $('#album-familia').hide();
   $('#album-ier').hide();
+  $('#album-prewedding').hide();
 }
 
 //8B2E5F

@@ -1,5 +1,5 @@
 //classes de slide em slide.css
-var slides = ['slide1', 'slide2', 'slide3', /*'slide4',*/ 'slide5', 'slide6'];
+var slides = ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'slide6'];
 var containers = ['#banner', '#page-wrapper'];
 
 $(document).ready(function(){
