@@ -959,7 +959,14 @@
 
 	}
 
+
 	@media screen and (max-width: 736px) {
+
+		#banner.save-the-date {
+				padding: 50%;	
+		    height: auto;
+		    min-height: 0;
+		  }
 
 		.row > * {
 			padding: 0 0 0 1.5em;
