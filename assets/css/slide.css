@@ -6,45 +6,45 @@ body.landing #page-wrapper.slide {
   padding-top: 0;
 }
 body.landing #page-wrapper.slide1, #banner.slide1:after {
-  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/1.jpg");
-  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/1.jpg");
-  background-image: -ms-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/1.jpg");
-  background-image: linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/1.jpg");
-}
-
-body.landing #page-wrapper.slide2, #banner.slide2:after {
   background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/2.jpg");
   background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/2.jpg");
   background-image: -ms-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/2.jpg");
   background-image: linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/2.jpg");
 }
 
-body.landing #page-wrapper.slide3, #banner.slide3:after {
-  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/3.jpg");
-  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/3.jpg");
-  background-image: -ms-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/3.jpg");
-  background-image: linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/3.jpg");
-}
-
-body.landing #page-wrapper.slide4, #banner.slide4:after {
+body.landing #page-wrapper.slide2, #banner.slide2:after {
   background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/7.jpg");
   background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/7.jpg");
   background-image: -ms-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/7.jpg");
   background-image: linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/7.jpg");
 }
 
-body.landing #page-wrapper.slide5, #banner.slide5:after {
-  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/8.jpg");
-  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/8.jpg");
-  background-image: -ms-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/8.jpg");
-  background-image: linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/8.jpg");
-}
-
-body.landing #page-wrapper.slide6, #banner.slide6:after {
+body.landing #page-wrapper.slide3, #banner.slide3:after {
   background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/9.jpg");
   background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/9.jpg");
   background-image: -ms-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/9.jpg");
   background-image: linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/9.jpg");
+}
+
+body.landing #page-wrapper.slide4, #banner.slide4:after {
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/1.jpg");
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/1.jpg");
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/1.jpg");
+  background-image: linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/1.jpg");
+}
+
+body.landing #page-wrapper.slide5, #banner.slide5:after {
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/3.jpg");
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/3.jpg");
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/3.jpg");
+  background-image: linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/3.jpg");
+}
+
+body.landing #page-wrapper.slide6, #banner.slide6:after {
+  background-image: -moz-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/8.jpg");
+  background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/8.jpg");
+  background-image: -ms-linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/8.jpg");
+  background-image: linear-gradient(top, rgba(0,0,0,0.0), rgba(0,0,0,0.0)), url("https://s3.amazonaws.com/imagens-site/banner/8.jpg");
 }
 
 #banner.slide:after {
