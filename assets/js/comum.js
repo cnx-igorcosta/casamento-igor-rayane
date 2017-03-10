@@ -6,6 +6,8 @@ $(document).ready(function(){
   setTimeout(contagemRegressiva,3000);
   //carrousel padrinhos
   setTimeout(initializeSwipe,2000);
+  //mudança automática de padrinhos
+  setTimeout(configureChangeHorizon,10000);
 
   //impede que ao clicar va para o topo da tela
   $('#tracarRota').click(function(e){
@@ -22,6 +24,8 @@ $(document).ready(function(){
     e.preventDefault();
     window.open('https://listadecasamento.americanas.com.br/pages/GuestGiftListPage/bridalRegistryId/01-02-15306038/');
   });
+
+
   // if(!skel.vars.mobile){
   //   $('.nano').nanoScroller();
   // }
@@ -192,6 +196,21 @@ function fechaTodos(){
   $('#album-familia').hide();
   $('#album-ier').hide();
   $('#album-prewedding').hide();
+}
+
+function configureChangeHorizon(){
+  $('#horizon-padrinhos').find('.horizon-dots').attr('id', 'changePadrinhos')
+  setTimeout(changeHorizonPadrinhos,1000);
+}
+
+function changeHorizonPadrinhos(){
+  var isLast = $('#changePadrinhos').find('.active').is(':last-child');
+  if(isLast){
+    $('#changePadrinhos').find(':first-child').click();
+  }else{
+    $('#changePadrinhos').find('.active').next().click();
+  }
+  setTimeout(changeHorizonPadrinhos, 5000);
 }
 
 //8B2E5F

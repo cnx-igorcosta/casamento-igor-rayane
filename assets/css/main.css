@@ -527,9 +527,6 @@
 			margin-left: 8.33333%;
 		}
 
-		.pic{
-			margin-left:20%;
-		}
 	}
 
 	@media screen and (max-width: 1280px) {
@@ -745,9 +742,6 @@
 			margin-left: 8.33333%;
 		}
 
-		.pic{
-			margin-left:20%;
-		}
 
 	}
 
@@ -962,9 +956,6 @@
 
 		.\-1u\28medium\29 {
 			margin-left: 8.33333%;
-		}
-		.pic{
-			margin-left:15%;
 		}
 	}
 
@@ -1186,9 +1177,6 @@
 		.\-1u\28small\29 {
 			margin-left: 8.33333%;
 		}
-		.pic{
-			margin-left:25%;
-		}
 	}
 
 	@media screen and (max-width: 480px) {
@@ -1402,9 +1390,6 @@
 
 		.\-1u\28xsmall\29 {
 			margin-left: 8.33333%;
-		}
-		.pic{
-			margin-left:15%;
 		}
 	}
 
