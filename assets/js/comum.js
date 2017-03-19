@@ -1,3 +1,4 @@
+var horizonSwiper;
 //COMPACTAR EM https://developers.google.com/closure/compiler/
 $(document).ready(function(){
   /*setTimeout(primeiraTroca,8000);*/
@@ -7,7 +8,7 @@ $(document).ready(function(){
   //carrousel padrinhos
   setTimeout(initializeSwipe,2000);
   //mudança automática de padrinhos
-  setTimeout(configureChangeHorizon,10000);
+  //setTimeout(configureChangeHorizon,10000);
 
   //impede que ao clicar va para o topo da tela
   $('#tracarRota').click(function(e){
@@ -109,7 +110,7 @@ function initializeSwipe(){
     showItems = 1;
     oneDotTwoItems = false;
   }
-  $('.horizon-swiper').horizonSwiper({
+  horizonSwiper =  $('.horizon-swiper').horizonSwiper({
     dots: true,
     arrows: true,
     animationSpeed: 700,
