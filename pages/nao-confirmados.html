@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html ng-app="naoConfirmadosApp">
+	<head>
+		<title>Casamento Igor & Rayane</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/comum.css" />
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/eggplant/jquery-ui.css" type="text/css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
+	</head>
+	<body class="landing">
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<!-- Page Wrapper -->
+		<div id="page-wrapper" class="slide slide1">
+			<input type="hidden" id="nextSlide" value="">
+			<input type="hidden" id="nextContainer" value="">
+				<!-- Header -->
+					<header id="header" class="alt">
+						<!--<h1><a href="index.html">Igor & Rayane</a></h1>-->
+						<h1><a href="index.html">Igor & Rayane</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											<li><a href="#banner" class="scrolly">Página Inicial</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- CONFIRMAR PRESENÇA -->
+					<section id="confirmarPresenca" class="wrapper style2 special">
+						<div class="inner" ng-controller="naoConfirmadosCtrl">
+							<header class="major">
+								<h2>Convidados que não confirmaram ou sem resposta</h2>
+							</header>
+							<div class="row uniform" style="padding-top:5%;">
+								<p ng-show="naoEncontrado" class="12u 12u$(small)">Não encontrado</p>
+								<div ng-show="mostrarTabela" class="table-wrapper">
+									<table>
+										<thead>
+											<tr>
+												<th>Nome</th>
+												<th colspan="2"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr ng-repeat="convidado in convidados">
+												<td >{{convidado.nome}}</td>
+												<td>
+													<input type="radio" id="confirmado-{{$index}}" name="confirmacao-{{$index}}" ng-model="convidado.semResposta" ng-value="true">
+													<label for="confirmado-{{$index}}">Sem resposta</label>
+												</td>
+												<td>
+													<input type="radio" id="nao-confirmado-{{$index}}" name="confirmacao-{{$index}}" ng-model="convidado.confirmado" ng-value="false">
+													<label for="nao-confirmado-{{$index}}">Não poderá ir</label>
+												</td>
+											</tr>
+											<tfoot ng-show="{{false}}">
+											</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<!-- <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li> -->
+							<li><a href="#" class="icon fa-facebook facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram instagram"><span class="label">Instagram</span></a></li>
+							<!-- <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li> -->
+							<!-- <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li> -->
+						</ul>
+						<ul class="copyright">
+							<li>Casamento Igor & Rayane</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.23/jquery-ui.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+			<script src="assets/js/angular.min.js"></script>
+			<script src="assets/js/angular-resource.min.js"></script>
+			<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script> -->
+			<script src="assets/js/nao-confirmadosApp.js"></script>
+	</body>
+</html>
