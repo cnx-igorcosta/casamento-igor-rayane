@@ -23,7 +23,8 @@ $(document).ready(function(){
   });
   $('#para-lar').click(function(e){
     e.preventDefault();
-    window.open('https://listadecasamento.americanas.com.br/pages/GuestGiftListPage/bridalRegistryId/01-02-15306038/');
+    window.open('http://casamento.pontofrio.com.br/#/lista-presentes/593343');
+    //window.open('https://listadecasamento.americanas.com.br/pages/GuestGiftListPage/bridalRegistryId/01-02-15306038/');
   });
 
 
