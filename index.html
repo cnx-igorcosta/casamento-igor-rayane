@@ -407,9 +407,9 @@
 						</header>
 						<div class="row uniform">
 							<div class="8u 12u$(small)">
-								<autocomplete ng-model="nome" data="nomes" on-type="updateMovies" ng-hide="mostrarFormConfirmacao"></autocomplete>
+								<autocomplete ng-model="nome" data="nomes" on-type="updateMovies" ng-hide="mostrarFormConfirmacao" ng-change="buscarConvidado(nome, $event);"/>
 							</div>
-							<div class="4u 12u$(small)">
+							<div class="3u 12u$(small)">
 								<ul class="actions fit">
 									<li>
 										<a id="confirmacao-buscar" name="confirmacao-buscar"
@@ -434,7 +434,9 @@
 										<tr ng-repeat="convidado in convidados">
 											<td>{{convidado.nome}}</td>
 											<td style="text-align: right;" ng-show="!mostrarStatus(convidados[$index]);">
-												<a class="button special small" ng-click="responder($event, convidados[$index]);">Responder</a>
+												<!--<a class="button special small" ng-click="responder($event, convidados[$index]);">Responder</a>-->
+												<a class=" button special small" ng-click="confirmarPresenca($event, convidados[$index], true);">Confirmar presença</a>
+												<a class=" button small" ng-click="confirmarPresenca($event, convidados[$index], false);">Não poderei ir</a>
 											</td>
 											<td style="text-align: left;" ng-show="mostrarStatus(convidados[$index]);">
 												Resposta enviada

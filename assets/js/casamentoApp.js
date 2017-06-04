@@ -68,9 +68,9 @@ App.controller('confirmacaoCtrl', function($scope, $resource){
   $scope.confirmarPresenca = function($event, convidado, confirma){
     $event.preventDefault();
 
-    var podeSalvar = validarConfirmacao(convidado)
+    /*var podeSalvar = validarConfirmacao(convidado)
 
-    if(podeSalvar){
+    if(podeSalvar){*/
       Convidado.update({
         _id: convidado._id,
         email: convidado.email,
@@ -81,8 +81,8 @@ App.controller('confirmacaoCtrl', function($scope, $resource){
       $scope.mostrarFormConfirmacao = false;
       $scope.mostrarMensagem = true;
       $scope.mensagem = 'Resposta enviada com sucesso!';
-      $scope.nome = '';
-    }
+      //$scope.nome = '';
+    /*}*/
   };
 
   function validarConfirmacao(convidado){
