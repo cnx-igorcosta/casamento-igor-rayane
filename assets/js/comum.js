@@ -4,7 +4,7 @@ $(document).ready(function(){
   /*setTimeout(primeiraTroca,8000);*/
 
   //contagem regressiva para data do evento
-  setTimeout(contagemRegressiva,3000);
+  //setTimeout(contagemRegressiva,3000);
   //carrousel padrinhos
   setTimeout(initializeSwipe,2000);
   //mudança automática de padrinhos
